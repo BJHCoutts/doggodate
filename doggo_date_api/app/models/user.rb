@@ -1,0 +1,10 @@
+class User < ApplicationRecord
+  has_secure_password()
+
+  has_one :doggo
+
+  def full_name
+    `${first_name} ${last_name}`
+  end
+
+end
