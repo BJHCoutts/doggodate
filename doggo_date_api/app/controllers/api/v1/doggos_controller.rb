@@ -1,4 +1,4 @@
-class Api::V1::DoggosController < ApplicationController
+class Api::V1::DoggosController < Api::ApplicationController
 
   def index
     @doggos = Doggo.order(created_at: :desc) #limit(10)
@@ -8,7 +8,5 @@ class Api::V1::DoggosController < ApplicationController
     #   format.json { render json: @doggos }
     end
   end
-
-# render json: @doggos
 
 end
