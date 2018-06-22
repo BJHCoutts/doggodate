@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_173355) do
     t.string "gender"
     t.string "coat_length"
     t.string "size"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,6 +9,7 @@ class CreateDoggos < ActiveRecord::Migration[5.2]
       t.string :gender
       t.string :coat_length
       t.string :size
+      t.string :category
 
       t.timestamps
     end

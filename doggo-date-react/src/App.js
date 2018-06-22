@@ -37,6 +37,8 @@ class App extends Component {
     });
   }
 
+  componentDidMount()
+
   handleAddDoggo(doggo) {
     let doggos = this.state.doggos;
     doggos.push(doggo);
