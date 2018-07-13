@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import AllDoggos from "./components/AllDoggos";
 import AddDoggo from "./components/AddDoggo";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
   constructor() {
@@ -36,8 +37,6 @@ class App extends Component {
       ]
     });
   }
-
-  componentDidMount()
 
   handleAddDoggo(doggo) {
     let doggos = this.state.doggos;
