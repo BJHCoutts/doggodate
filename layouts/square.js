@@ -39,14 +39,14 @@ const images = [
   "wicked_witch_wendy"
 ];
 
-// for (i of images) {
-//   document.querySelector("#here").appendChild(innerHTML`<div class="card">
-//       <div
-//         class="front img"
-//         style="background-image:url('./assets/images/${i}.jpg');"
-//       />
-//       <div class="back">
-//         <p>This is the back</p>
-//       </div>
-//     </div>`);
-// }
+for (i of images) {
+  document.querySelector("#here").appendChild(innerHTML`<div class="card">
+      <div
+        class="front img"
+        style="background-image:url('./assets/images/${i}.jpg');"
+      />
+      <div class="back">
+        <p>This is the back</p>
+      </div>
+    </div>`);
+}

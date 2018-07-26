@@ -7,6 +7,7 @@ class Api::V1::DoggosController < Api::ApplicationController
     #   format.html { render }
     #   format.json { render json: @doggos }
     end
-  end
+
+    
 
 end

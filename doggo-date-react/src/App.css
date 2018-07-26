@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://fonts.googleapis.com/css?family=Arvo");
 
 .App {
   font-family: arvo;
@@ -7,4 +8,24 @@
 .Doggo {
   text-align: left;
   font-size: 0.75em;
+}
+
+body {
+  height: 100%;
+  font-family: Avro;
+}
+
+.parallax {
+  background-image: url("./images/group/cuddletime.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Doggo {
+  text-align: left;
+  font-size: 1rem;
 }
