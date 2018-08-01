@@ -1,26 +1,8 @@
-// document.querySelectorAll("h1").addEventListener("click", () => {
-//   console.log("rawr");
-// });
-
 document.addEventListener("click", () => {
-  // console.log("Something was clicked!");
   document.querySelectorAll(".card").forEach(node => {
     node.classList.toggle("flipped");
-    // node.style.transform = "rotateY(180deg)"
-    //   ? (node.style.transform = "rotateY(180deg)")
-    //   : (node.style.transform = "rotateY(0deg)");
   });
 });
-
-// document.querySelectorAll("h1").addEventListener("click", () => {
-//   console.log("rawr");
-// });
-// () => {
-//   const { log } = console;
-//   log("Flip a dip dip!");
-//   console.log("eep");
-//   document.querySelectorAll(".card").style.transform = "rotateY(180deg)";
-// });
 
 const images = [
   "archmage_alfie.jpg",
