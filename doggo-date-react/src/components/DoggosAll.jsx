@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DoggoSingle from "./DoggoSingle";
 
-class AllDoggos extends Component {
+class DoggosAll extends Component {
   deleteDoggo(id) {
     this.props.onDelete(id);
   }
@@ -29,4 +29,4 @@ class AllDoggos extends Component {
 //   onDelete: React.PropTypes.func
 // };
 
-export default AllDoggos;
+export default DoggosAll;

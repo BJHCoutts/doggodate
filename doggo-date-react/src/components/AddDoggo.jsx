@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../style/adddoggo.css";
 
 class AddDoggo extends Component {
   constructor() {
@@ -48,7 +49,7 @@ class AddDoggo extends Component {
       );
     });
     return (
-      <div>
+      <div className="content">
         <h2>Add Doggo</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>

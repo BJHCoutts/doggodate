@@ -1,32 +1,44 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://fonts.googleapis.com/css?family=Arvo:bold|Lato|Open+Sans");
 
-.App {
-  font-family: arvo;
-  text-align: center;
+:root {
+  --primary-colour: rgb(177, 86, 53);
+  /* --prime-colour: rgb(177, 86, 53); */
+  --secondary-colour: steelblue;
+  --highlight-colour: seashell;
+  --text-display: Arvo;
+  --text-body: Lato;
 }
+
 .Doggo {
   text-align: left;
   font-size: 0.75em;
 }
 
 body {
-  height: 100%;
-  font-family: Avro;
-}
-
-div {
-  font-family: Arvo;
-}
-
-.parallax {
-  /* background-image: url("../images/doggos/group/cuddletime.jpg"); */
   /* height: 100%; */
-  position: relative;
+  font-family: var(--text-display);
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+p {
+  margin: 0;
+  padding: 1em;
+  filter: none;
+  color: var(--secondary-colour);
+  font-family: var(--text-body);
+}
+.parallax {
   background-attachment: fixed;
   background-position: center;
-  /* width: 100%; */
   background-repeat: no-repeat;
   background-size: cover;
+  /* background: rgba(255, 255, 255, 50%); */
+  /* background-image: url("../images/doggos/group/cuddletime.jpg"); */
+  /* height: 100%; */
+  /* position: relative; */
+  /* width: 100%; */
 }
 
 .Doggo {
@@ -34,10 +46,22 @@ div {
   font-size: 1rem;
 }
 
-.baseDiv {
-  background-color: coral;
-  border-radius: 2vw;
+/* .baseDiv {
+  filter: none;
+  background-color: var(--primary-colour);
   padding: 1vw 2.5vw;
-  outline-color: darkslategrey;
-  outline-width: thin;
+  border-radius: 2vw;
+} */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 4.5 rem;
+}
+
+.text {
+  /* position: absolute; */
+  filter: revert;
+  /* z-index: 1; */
 }

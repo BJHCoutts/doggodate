@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import "./style/app.css";
-import Square from "./components/Square";
-import AllDoggos from "./components/AllDoggos";
-import AddDoggo from "./components/AddDoggo";
-import Index from "./components/Index";
-// import NavBar from "./components/NavBar";
 
-class App extends Component {
+import DoggosAll from "./DoggosAll";
+import AddDoggo from "./AddDoggo";
+
+class DoggosList extends Component {
   constructor() {
     super();
     this.state = {};
@@ -55,18 +52,16 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Index />
-        <Square />
-        <div className="App">
-          <h1>Doggo Date</h1>
+      <div className="App">
+        <h1>Doggo Date</h1>
+        <div className="baseDiv">
           <AddDoggo addDoggo={this.handleAddDoggo.bind(this)} />
-          <br />
-          <AllDoggos doggos={this.state.doggos} />
         </div>
-      </main>
+        <br />
+        <DoggosAll doggos={this.state.doggos} />
+      </div>
     );
   }
 }
 
-export default App;
+export default DoggosList;

@@ -1,21 +1,9 @@
-.main {
-  height: 100%;
-  margin: 0;
-  color: #777;
-}
-
-.bgimg-1,
+/* .bgimg-1,
 .bgimg-2,
 .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+} */
 
-.bgimg-1 {
+/* .bgimg-1 {
   min-height: 400px;
 }
 
@@ -25,26 +13,50 @@
 
 .bgimg-3 {
   min-height: 400px;
+} */
+
+.banner {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  position: sticky;
+  top: 3em;
 }
 
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
+.titlebanner {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: rgb(59, 2, 6);
+  mix-blend-mode: multiply;
+  font-style: Bold;
+  font-size: 5em;
   width: 100%;
-  text-align: center;
-  color: #000;
 }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
+.bar {
+  background-color: var(--primary-colour);
+  height: 4vh;
 }
 
-h3 {
-  letter-spacing: 5px;
-  color: #111;
+.cover-image {
+  width: 100%;
+  height: 250vh; /* gives the effect a bit of room to breathe */
+  position: relative;
+  background: url(https://unsplash.it/g/1000/600/?image=433&blur) fixed 50% /
+    cover; /* This is the bottom image, blurred and grayscaled. Could also use filters to do this + another pseudoel, but is less performant. */
+}
+
+.cover-image:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  background-image: url(https://unsplash.it/1000/600/?image=433);
+  mask: linear-gradient(
+    to bottom,
+    white 40%,
+    transparent
+  ); /* Top image is masked with a gradient */
 }

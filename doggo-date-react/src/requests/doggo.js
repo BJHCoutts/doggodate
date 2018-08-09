@@ -1,24 +1,26 @@
-import { BASE_URL } from "../config";
+import { BASE_URL } from "./config";
 
-export default {
+const Doggo = {
   all() {
-    return fetch(`$BASE_URL}/doggos`, {
-      headers: { "Content-Type": "application/json" },
+    return fetch(`${BASE_URL}/doggos`, {
+      // headers: { "Content-Type": "application/json" },
       credentials: "include"
     }).then(response => response.json());
   },
   one(id) {
     return fetch(`${BASE_URL}/doggos/${id}`, {
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
       credentials: "include"
-    }).then(response => response.json());
+    }).then(res => res.json());
   },
   create(params) {
     return fetch(`${BASE_URL}/doggos`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
       credentials: "include",
       body: JSON.stringify(params)
-    }).then(response => response.json());
+    }).then(res => res.json());
   }
 };
+
+export default Doggo;

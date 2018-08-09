@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../style/app.css";
 import "../style/card.css";
 import archmageAlfie from "../images/doggos/archmage_alfie.jpg";
 import bumbleBertha from "../images/doggos/bumble_bertha.jpg";
@@ -67,7 +66,7 @@ class Square extends Component {
   render() {
     return (
       <div className="container">
-        <div className="basediv">
+        <div className="baseDiv">
           <img src={logo} width="300em" />
         </div>
         {/* <div
