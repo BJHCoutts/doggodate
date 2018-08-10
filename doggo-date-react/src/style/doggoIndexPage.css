@@ -1,0 +1,15 @@
+.index__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0% 0% 0% 40%;
+}
+.index__doggo {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: var(--secondary-colour) solid 0.1em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  padding: 2%;
+}

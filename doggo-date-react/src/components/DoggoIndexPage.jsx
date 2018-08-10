@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Doggo from "../requests/doggo";
+import "../style/doggoIndexPage.css";
 import { Link } from "react-router-dom";
+
+//
 
 class DoggoIndexPage extends Component {
   constructor(props) {
@@ -23,14 +26,14 @@ class DoggoIndexPage extends Component {
     const { doggos } = this.state;
 
     return (
-      <main>
+      <main className="index__container">
         <h1>Doggos</h1>
         <ul style={{ padding: 0, listStyle: "none" }}>
           {doggos.map((doggo, index) => (
-            <li style={{ marginBottom: "1rem" }} key={doggo.id}>
-              <span>{new Date(doggo.created_at).toLocaleDateString()}</span>
-              {" â¢Â "}
+            <li className="index__doggo" key={doggo.id}>
               <Link to={`/doggos/${doggo.id}`}>{doggo.name}</Link>
+              <br />
+              <span>{new Date(doggo.created_at).toLocaleDateString()}</span>
               <br />
               {/*
               document
