@@ -12,7 +12,7 @@ import Square from "./Square";
 import SignInPage from "./SignInPage";
 import DoggoAdd from "./DoggoAdd";
 import DoggoIndexPage from "./DoggoIndexPage";
-import Map from "./Map";
+import MapPage from "./MapPage";
 import Session from "../requests/session";
 import User from "../requests/user";
 import NotFoundPage from "./NotFoundPage";
@@ -79,7 +79,7 @@ class App extends Component {
             /> */}
             <Route path="/doggoadd" exact component={DoggoAdd} />
             <Route path="/doggoindex" exact component={DoggoIndexPage} />
-            <Route path="/map" exact component={Map} />
+            <Route path="/map_page" exact component={MapPage} />
             <Route
               path="/sign_in"
               render={props => (

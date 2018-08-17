@@ -10,6 +10,12 @@ const NavBar = props => {
     onSignOut();
   };
 
+  const greeting_arr = ["Bork, Bork, ", "Arf, Arf, ", "Woof, Woof, "];
+
+  const greeting = () => {
+    return greeting_arr[Math.floor(Math.random() * greeting_arr.length)];
+  };
+
   return (
     <nav className="NavBar">
       <NavLink exact to="/">
@@ -24,12 +30,15 @@ const NavBar = props => {
       <NavLink exact to="/doggoindex">
         Doggo Index
       </NavLink>
-      <NavLink exact to="/map">
+      <NavLink exact to="/map_page">
         Map
       </NavLink>
       {currentUser ? (
         <React.Fragment>
-          <span>{currentUser.full_name}</span>
+          <span>
+            {greeting()}
+            {currentUser.full_name}
+          </span>
           <a onClick={handleClick} href="#not-used">
             Sign Out
           </a>

@@ -33,7 +33,12 @@ class DoggoIndexPage extends Component {
             <li className="index__doggo" key={doggo.id}>
               <img src={`${process.env.PUBLIC_URL}${doggo.image}`} />
               <a className="index__doggo_name">
-                <Link to={`/doggos/${doggo.id}`}>{doggo.name}</Link>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/doggos/${doggo.id}`}
+                >
+                  {doggo.name}
+                </Link>
               </a>
               <br />
               <span>{new Date(doggo.created_at).toLocaleDateString()}</span>

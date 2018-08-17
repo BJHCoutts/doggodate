@@ -8,6 +8,7 @@ super_user = User.create(
   last_name: "Highgarden",
   email: "hot@hot.com",
   password: PASSWORD,
+  address: "Paris Avenue, Earlwood, New South Wales, Australia",
   admin: true
 )
 
@@ -18,6 +19,7 @@ super_user = User.create(
   User.create(
     first_name: first_name,
     last_name: last_name,
+    address: "Paris Avenue, Earlwood, New South Wales, Australia",
     email: "#{first_name.downcase}.#{last_name.downcase}@hot.com",
     password: PASSWORD
   )

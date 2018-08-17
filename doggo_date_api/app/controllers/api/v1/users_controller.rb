@@ -11,6 +11,13 @@ class Api::V1::UsersController < Api::ApplicationController
     # respond_to do |format|
     #   format.html { render }
     #   format.json { render json: @doggos }
-    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :first_name, :last_name, :email, :address. 
+    )
 
 end
