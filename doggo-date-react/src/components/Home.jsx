@@ -3,6 +3,7 @@ import Logo from "../images/misc/logo.svg";
 import "../style/index.css";
 
 // import sunYatSen from "../images/parks/classical-chinese-garden-image-via-Dr.-Sun-Yat-Sen-Classical-Chinese-Garden--e1517521757327.jpg";
+//.clientHeight for calculating
 import crabPark from "../images/parks/crab-park-image-via-@cairnm-Instagram-e1517521600510.jpg";
 import deerLake from "../images/parks/deer-lake-park-image-via-@robby.stankowska-Instagram-e1517521725737.jpg";
 import dudeChilling from "../images/parks/dude-chilling-park-image-via-@koseditionist-Instagram.jpg";
@@ -86,13 +87,10 @@ class Home extends Component {
             backgroundImage: `url(${parkImages[1]})`
           }}
         >
-          <div className="cover-image" />
+          {/* <div className="cover-image" /> */}
           <h1 className="titlebanner"> Doggo Date</h1>
         </div>
         <div className="bar" />
-        {/* <div className="banner">
-          <img src={Logo} style={{ padding: "2em", width: "300em" }} />
-        </div> */}
         <div
           className="parallax bgimg-1"
           style={{

@@ -9,13 +9,14 @@ class DoggoSerializer < ActiveModel::Serializer
     :gender, 
     :coat_length, 
     :size, 
-    :category
+    :category,
+    :image
   )
 
   def title
     title.capitalize
   end
-
+:admin
   #has_many belongs_to
 
 end

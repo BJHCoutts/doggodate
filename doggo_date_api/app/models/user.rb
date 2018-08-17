@@ -1,19 +1,32 @@
 class User < ApplicationRecord
-  # has_secure_password()
-  before_create :generate_api_key
-  # has_one :doggo
+  has_secure_password
+  has_many :doggos, dependent: :destroy
 
-  def full_name
-    `${first_name} ${last_name}`
-  end
+  # Provides user authentication features on the model
+  # it's called in. Requires a column named `password_digest`
+  # and the gem `bcrypt`
 
-  private
+  validates :first_name, :last_name, presence: { message: 'must be present!' }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  #                   |          |@|
+  #                   | steve    |@|codecore|.com
+  #           INVALID | jim%bob  |a|b*zz    |,gov
 
-  def generate_api_key
-    loop do
-      self.api_key = SecureRandom.hex(32)
-      break unless User.exists?(api_key: api_key)
+  # The following validation will check that the email is present,
+  # it's unique and it respects a certain format. To test the format,
+  # we use a regular express. Regular expression often abbreviated
+  # as Regex or Regexp is sort mini-programming for detecting patterns
+  # in text. To learn more, check out https://regexone.com/
+
+  validates(
+    :email,
+    presence: true,
+    uniqueness: true,
+    format: VALID_EMAIL_REGEX
+  )
+
+    def full_name
+      first_name + " " + last_name
     end
-  end
 
 end

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo:bold|Lato|Open+Sans");
 
 :root {
-  --primary-colour: rgb(177, 86, 53);
+  --primary-colour: rgb(206, 116, 83);
   /* --prime-colour: rgb(177, 86, 53); */
   --secondary-colour: steelblue;
-  --highlight-colour: seashell;
+  --highlight-colour: whitesmoke;
   --text-display: Arvo;
   --text-body: Lato;
 }

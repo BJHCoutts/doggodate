@@ -31,7 +31,10 @@ class DoggoIndexPage extends Component {
         <ul style={{ padding: 0, listStyle: "none" }}>
           {doggos.map((doggo, index) => (
             <li className="index__doggo" key={doggo.id}>
-              <Link to={`/doggos/${doggo.id}`}>{doggo.name}</Link>
+              <img src={`${process.env.PUBLIC_URL}${doggo.image}`} />
+              <a className="index__doggo_name">
+                <Link to={`/doggos/${doggo.id}`}>{doggo.name}</Link>
+              </a>
               <br />
               <span>{new Date(doggo.created_at).toLocaleDateString()}</span>
               <br />
@@ -47,7 +50,11 @@ class DoggoIndexPage extends Component {
             </li>
           ))}
         </ul>
-        <ul>{doggos.map((doggo, index) => <li key={doggo.id} />)}</ul>
+        <ul>
+          {doggos.map((doggo, index) => (
+            <li key={doggo.id} />
+          ))}
+        </ul>
       </main>
     );
   }

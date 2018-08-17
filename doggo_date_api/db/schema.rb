@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_22_194032) do
+ActiveRecord::Schema.define(version: 2018_08_14_202147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2018_06_22_194032) do
     t.string "coat_length"
     t.string "size"
     t.string "category"
+    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_doggos_on_user_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,10 +41,14 @@ ActiveRecord::Schema.define(version: 2018_06_22_194032) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "password_digest"
+    t.string "api_key"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "api_key"
-    t.index ["api_key"], name: "index_users_on_api_key"
+    t.index ["api_key"], name: "index_users_on_api_key", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "doggos", "users"
 end
