@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo:bold|Lato|Open+Sans");
 
+@import "~antd/dist/antd.css";
+
 :root {
   --primary-colour: rgb(206, 116, 83);
   /* --prime-colour: rgb(177, 86, 53); */
@@ -9,17 +11,21 @@
   --text-body: Lato;
 }
 
-.Doggo {
-  text-align: left;
-  font-size: 0.75em;
-}
-
 body {
   /* height: 100%; */
-  font-family: var(--text-display);
+  font-family: var(--text-display) !important;
   margin: 0;
   padding: 0;
   z-index: 0;
+  color: var(--secondary-colour);
+}
+
+h1 {
+  color: var(--secondary-colour);
+}
+
+h2 {
+  color: var(--secondary-colour);
 }
 
 p {
@@ -27,7 +33,7 @@ p {
   padding: 1em;
   filter: none;
   color: var(--secondary-colour);
-  font-family: var(--text-body);
+  font-family: var(--text-body) !important;
 }
 .parallax {
   background-attachment: fixed;
@@ -41,17 +47,13 @@ p {
   /* width: 100%; */
 }
 
-.Doggo {
-  text-align: left;
-  font-size: 1rem;
-}
-
-/* .baseDiv {
+.baseDiv {
   filter: none;
   background-color: var(--primary-colour);
+  color: var(--secondary-colour);
   padding: 1vw 2.5vw;
   border-radius: 2vw;
-} */
+}
 
 .content {
   display: flex;

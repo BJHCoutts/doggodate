@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Logo from "../images/misc/logo.svg";
 import "../style/index.css";
 
-// import sunYatSen from "../images/parks/classical-chinese-garden-image-via-Dr.-Sun-Yat-Sen-Classical-Chinese-Garden--e1517521757327.jpg";
+import sunYatSen from "../images/parks/classical-chinese-garden-image-via-Dr.-Sun-Yat-Sen-Classical-Chinese-Garden--e1517521757327.jpg";
 //.clientHeight for calculating
 import crabPark from "../images/parks/crab-park-image-via-@cairnm-Instagram-e1517521600510.jpg";
 import deerLake from "../images/parks/deer-lake-park-image-via-@robby.stankowska-Instagram-e1517521725737.jpg";
 import dudeChilling from "../images/parks/dude-chilling-park-image-via-@koseditionist-Instagram.jpg";
 import hingePark from "../images/parks/hinge-park-image-via-@xnt87-Instagram-e1517521773108.jpg";
-// import jericho from "../images/parks/jericho-beach-image-via-Joe-Wolf%E2%80%8E-Facebook-e1517521581491.jpg";
+import jericho from "../images/parks/jericho-beach-image-via-Joe-Wolf%E2%80%8E-Facebook-e1517521581491.jpg";
 import jonathonRogers from "../images/parks/jonathan-rogers-park-image-via-@myopicman-Instagram-e1517521647348.jpg";
 import kitsBeach from "../images/parks/kitsilano-beach-image-via-GoToVan-Flickr-e1517520908246.jpg";
 import lighthousePark from "../images/parks/lighthouse-park-image-via-@szesc_blota_stop-Instagram-e1517521787903.jpg";
@@ -18,6 +18,8 @@ import robsonSquare from "../images/parks/pacific-spirit-park-image-via-Pacific-
 import stanleyPark from "../images/parks/stanley-park-image-via-InSapphoWeTrust-Flickr-e1517521685289.jpg";
 import troutLake from "../images/parks/trout-lake-park-image-via-Frank-Reginald-Wilson-Facebook-e1517521661522.jpg";
 import vanDusen from "../images/parks/vandusen-botanical-garden-image-via-VanDusen-Botanical-Garden-Facebook-e1517521618594.jpg";
+
+import eyes from "../images/doggos/wide-eyed-dog.jpg";
 
 class Home extends Component {
   //make function?
@@ -31,7 +33,7 @@ class Home extends Component {
       deerLake,
       dudeChilling,
       hingePark,
-      // jericho,
+      jericho,
       jonathonRogers,
       kitsBeach,
       lighthousePark,
@@ -62,10 +64,10 @@ class Home extends Component {
         <div
           className="parallax bgimg-1"
           style={{
-            backgroundImage: `url(${parkImages[0]})`
+            backgroundImage: `url(${eyes})`
           }}
         >
-          <p>
+          {/* <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
             velit rerum veritatis in eum ducimus cum aliquid fugit dolores
             repellendus voluptate tempora, placeat nostrum excepturi sit odit
@@ -78,13 +80,13 @@ class Home extends Component {
             placeat doloribus necessitatibus vero doloremque voluptatum ratione
             ipsa? Soluta tempore quidem reprehenderit est voluptas, quam eveniet
             quae aspernatur harum, vel sapiente?
-          </p>
+          </p> */}
         </div>
         <div className="bar" />
         <div
           className="parallax banner"
           style={{
-            backgroundImage: `url(${parkImages[1]})`
+            backgroundImage: `url(${jericho})`
           }}
         >
           {/* <div className="cover-image" /> */}

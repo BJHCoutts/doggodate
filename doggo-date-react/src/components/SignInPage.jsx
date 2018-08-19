@@ -49,21 +49,23 @@ class SignInPage extends Component {
     const { errorMessage } = this.state;
     return (
       <main>
-        <h2>Sign In</h2>
-        <form onSubmit={this.createSession}>
-          {errorMessage ? <p>{errorMessage}</p> : null}
-          <div>
-            <label htmlFor="email">Email</label> <br />
-            <input type="text" name="email" id="email" />
-          </div>
+        <div className="baseDiv">
+          <h2>Sign In</h2>
+          <form onSubmit={this.createSession}>
+            {errorMessage ? <p>{errorMessage}</p> : null}
+            <div>
+              <label htmlFor="email">Email</label> <br />
+              <input type="text" name="email" id="email" />
+            </div>
 
-          <div>
-            <label htmlFor="password">Password</label> <br />
-            <input type="password" name="password" id="password" />
-          </div>
+            <div>
+              <label htmlFor="password">Password</label> <br />
+              <input type="password" name="password" id="password" />
+            </div>
 
-          <input type="submit" value="Sign In" />
-        </form>
+            <input type="submit" value="Sign In" />
+          </form>
+        </div>
       </main>
     );
   }

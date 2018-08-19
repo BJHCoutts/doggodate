@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MapContainer } from "./MapContainer";
+// import { MapContainer } from "./MapContainer";
 
 class MapPage extends Component {
   constructor(props) {
@@ -7,21 +7,20 @@ class MapPage extends Component {
     this.state = {};
   }
   render() {
-    const containerElement = {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      justifyContent: "flex-end",
-      alignItems: "center"
-    };
+    // const containerElement = {
+    //   position: "absolute",
+    //   top: 0,
+    //   left: 0,
+    //   right: 0,
+    //   bottom: 0,
+    //   justifyContent: "flex-end",
+    //   alignItems: "center"
+    // };
 
     return (
-      <React.Fragment>
+      <main>
         <h1>It's a Map</h1>
-        <MapContainer style={containerElement} />
-      </React.Fragment>
+      </main>
     );
   }
 }

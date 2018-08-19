@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../style/card.css";
+import "../style/doggoSquare.css";
 import archmageAlfie from "../images/doggos/archmage_alfie.jpg";
 import bumbleBertha from "../images/doggos/bumble_bertha.jpg";
 import drillBitDarel from "../images/doggos/drill_bit_darel.jpg";
@@ -50,7 +50,7 @@ document.addEventListener("click", () => {
   });
 });
 
-class Square extends Component {
+class DoggoSquare extends Component {
   constructor(props) {
     super(props);
     //   this.addActiveClass = this.addActiveClass.bind(this);
@@ -65,10 +65,10 @@ class Square extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="baseDiv">
+      <main className="container">
+        {/* <div className="baseDiv">
           <img src={logo} width="300em" />
-        </div>
+        </div> */}
         {/* <div
           className={this.state.active ? "flipped" : null}
           onClick={this.toggleClass}
@@ -216,9 +216,9 @@ class Square extends Component {
             />
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
 
-export default Square;
+export default DoggoSquare;

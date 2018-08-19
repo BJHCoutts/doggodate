@@ -1,4 +1,4 @@
-//questions, setup matches modelshow name, images from database
+//AIzaSyB9MlVMZxHnie4R24XY9rLGyLad3BjN_aU
 
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,7 +8,7 @@ import "../style/app.css";
 import AuthRoute from "./AuthRoute";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Square from "./Square";
+import DoggoSquare from "./DoggoSquare";
 import SignInPage from "./SignInPage";
 import DoggoAdd from "./DoggoAdd";
 import DoggoIndexPage from "./DoggoIndexPage";
@@ -69,7 +69,7 @@ class App extends Component {
           <NavBar currentUser={this.state.currentUser} />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/square" exact component={Square} />
+            <Route path="/square" exact component={DoggoSquare} />
             <Route path="/sign_in" exact component={SignInPage} />
             {/* <AuthRoute
               isAuth={currentUser}

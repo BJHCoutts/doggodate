@@ -1,19 +1,46 @@
-.index__container {
+.index__container__page {
   display: flex;
+  width: 100%;
   justify-content: center;
-  flex-direction: column;
-  padding: 0% 0% 0% 40%;
+  /* flex-direction: column; */
+  padding: 0% 0% 0% 0%;
 }
-.index__doggo {
+
+.index__doggo_card {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 60%;
   border: var(--secondary-colour) solid 0.1em;
   border-radius: 0.25em;
   text-decoration: none;
-  padding: 2%;
+  padding: 0%;
+  margin: 3em 0;
+}
+
+.index__doggo_img {
+  position: relative;
+  display: inline-flex;
+  height: 20em;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.index__doggo_text {
+  margin: 1em;
+  line-height: 1em;
 }
 
 .index__doggo_name {
   text-decoration: none;
+  color: var(--secondary-colour);
+  line-height: 1.75em;
+}
+
+.index__doggo_details {
+  line-height: 1.5em;
 }

@@ -26,38 +26,41 @@ class DoggoIndexPage extends Component {
     const { doggos } = this.state;
 
     return (
-      <main className="index__container">
+      <main className="index__container_page">
         <h1>Doggos</h1>
         <ul style={{ padding: 0, listStyle: "none" }}>
           {doggos.map((doggo, index) => (
-            <li className="index__doggo" key={doggo.id}>
-              <img src={`${process.env.PUBLIC_URL}${doggo.image}`} />
-              <a className="index__doggo_name">
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`/doggos/${doggo.id}`}
-                >
-                  {doggo.name}
-                </Link>
-              </a>
-              <br />
-              <span>{new Date(doggo.created_at).toLocaleDateString()}</span>
-              <br />
-              {/*
-              document
-                .querySelector("button")
-                .addEventListener("click", () => console.log("Button clicked!"))
-              */}
-              {/* <button onClick={e => console.log(e.target, "was clicked!")}> */}
-              {/* <button data-id={doggo.id} onClick={this.deleteQuestion}>
-                Delete
-              </button> */}
+            <li className="index__doggo_card" key={doggo.id}>
+              <div
+                className="index__doggo_img"
+                style={{
+                  backgroundImage: `url(${process.env.PUBLIC_URL}${
+                    doggo.image
+                  })`
+                }}
+              />
+              <div className="index__doggo_text">
+                <a className="index__doggo_name">
+                  <Link
+                    className="index__doggo_name"
+                    to={`/doggos/${doggo.id}`}
+                    style={{ fontSize: "1.25em" }}
+                  >
+                    {doggo.name}
+                  </Link>
+                </a>
+                <br />
+                <div className="index__doggo_details">
+                  <span style={{ fontSize: "1em" }}>"{doggo.meme_phrase}"</span>
+                  <br />
+                </div>
+                <small>
+                  Member since: <br />
+                  {new Date(doggo.created_at).toLocaleString()}
+                  <br />
+                </small>
+              </div>
             </li>
-          ))}
-        </ul>
-        <ul>
-          {doggos.map((doggo, index) => (
-            <li key={doggo.id} />
           ))}
         </ul>
       </main>

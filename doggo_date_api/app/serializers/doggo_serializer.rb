@@ -10,7 +10,8 @@ class DoggoSerializer < ActiveModel::Serializer
     :coat_length, 
     :size, 
     :category,
-    :image
+    :image,
+    :created_at
   )
 
   def title
