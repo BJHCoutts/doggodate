@@ -40,17 +40,17 @@ class Api::V1::DoggosController < Api::ApplicationController
 
   def doggo_params
     params.require(:doggo).permit(
-      :id, 
-      :name, 
-      :breed, 
-      :sound, 
-      :meme_phrase, 
-      :age, 
-      :gender, 
-      :coat_length, 
-      :size, 
-      :category,
-      :image
+      # :id, 
+      # :name, 
+      # :breed, 
+      # :sound, 
+      # :meme_phrase, 
+      # :age, 
+      # :gender, 
+      # :coat_length, 
+      # :size, 
+      # :category,
+      # :image
     )
   end
 

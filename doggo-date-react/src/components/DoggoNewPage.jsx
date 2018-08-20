@@ -6,9 +6,9 @@ class DoggoNewPage extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   validationErrors: []
-    // };
+    this.state = {
+      validationErrors: []
+    };
 
     this.createDoggo = this.createDoggo.bind(this);
   }
@@ -30,36 +30,21 @@ class DoggoNewPage extends Component {
       size: formData.get("size"),
       category: formData.get("category")
     }).then(data => {
-      const doggoId = data.id;
-      this.props.history.push(`/doggos/${doggoId}`);
+      // debugger;
+
+      if (data.status === 422) {
+        this.setState({
+          validationErrors: data.errors
+        });
+      } else {
+        const doggoId = data.id;
+        this.props.history.push(`/doggos/${doggoId}`);
+      }
     });
   }
 
-  // createDoggo(event) {
-  //   event.preventDefault();
-  //   const { currentTarget } = event;
-
-  //   const formData = new FormData(currentTarget);
-
-  //   Doggo.create({
-  //     title: formData.get("title"),
-  //     body: formData.get("body")
-  //   }).then(data => {
-  //     // debugger;
-
-  //     if (data.status === 422) {
-  //       this.setState({
-  //         validationErrors: data.errors
-  //       });
-  //     } else {
-  //       const questionId = data.id;
-  //       this.props.history.push(`/questions/${questionId}`);
-  //     }
-  //   });
-  // }
-
   render() {
-    // const { validationErrors } = this.state;
+    const { validationErrors } = this.state;
 
     return (
       <main>

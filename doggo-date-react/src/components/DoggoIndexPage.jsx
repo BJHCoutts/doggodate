@@ -77,12 +77,7 @@ class DoggoIndexPage extends Component {
     shuffleArray(parkImages);
 
     return (
-      <main
-        className="index__ container_page parallax bgimg-1"
-        style={{
-          backgroundImage: `url(${parkImages[1]})`
-        }}
-      >
+      <main className="index__ container_page">
         <ul style={{ padding: 0, listStyle: "none" }}>
           {doggos.map((doggo, index) => (
             <li className="index__doggo_container" key={doggo.id}>

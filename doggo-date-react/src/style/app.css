@@ -20,6 +20,10 @@ body {
   color: var(--secondary-colour);
 }
 
+master {
+  /* height: 100vh; */
+}
+
 h1 {
   color: var(--secondary-colour);
 }

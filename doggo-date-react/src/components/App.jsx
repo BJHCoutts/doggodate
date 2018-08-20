@@ -115,6 +115,7 @@ class App extends Component {
           className="parallax"
           style={{
             backgroundImage: `url(${parkImages[1]})`
+            // height: "100vh"
           }}
         >
           <NavBar currentUser={this.state.currentUser} />

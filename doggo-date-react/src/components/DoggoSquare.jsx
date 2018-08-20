@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../style/doggoSquare.css";
 import archmageAlfie from "../images/doggos/archmage_alfie.jpg";
 import bumbleBertha from "../images/doggos/bumble_bertha.jpg";
@@ -50,175 +50,161 @@ document.addEventListener("click", () => {
   });
 });
 
-class DoggoSquare extends Component {
-  constructor(props) {
-    super(props);
-    //   this.addActiveClass = this.addActiveClass.bind(this);
-    //   this.state = {
-    //     active: false
-    //   };
-    // }
-    // toggleClass() {
-    //   const currentState = this.state.active;
-    //   this.setState({ active: !currentState });
-  }
-
-  render() {
-    return (
-      <main className="container">
-        {/* <div className="baseDiv">
+const DoggoSquare = () => {
+  return (
+    <main className="container">
+      {/* <div className="baseDiv">
           <img src={logo} width="300em" />
         </div> */}
-        {/* <div
+      {/* <div
           className={this.state.active ? "flipped" : null}
           onClick={this.toggleClass}
         /> */}
-        <div className="row">
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[0]})`
-              }}
-            />
-            <div className="back" />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[1]})`
-              }}
-            />
-            <div className="back" style={{ backgroundPositionX: "-200px" }} />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[2]})`
-              }}
-            />
-            <div className="back" style={{ backgroundPositionX: "-400px" }} />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[3]})`
-              }}
-            />
-            <div className="back" style={{ backgroundPositionX: "-600px" }} />
-          </div>
+      <div className="row">
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[0]})`
+            }}
+          />
+          <div className="back" />
         </div>
 
-        <div className="row">
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[4]})`
-              }}
-            />
-            <div className="back" style={{ backgroundPositionY: "-200px" }} />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[5]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-200px -200px" }}
-            />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[6]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-400px -200px" }}
-            />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[7]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-600px -200px" }}
-            />
-          </div>
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[1]})`
+            }}
+          />
+          <div className="back" style={{ backgroundPositionX: "-200px" }} />
         </div>
 
-        <div className="row">
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[8]})`
-              }}
-            />
-            <div className="back" style={{ backgroundPositionY: "-400px" }} />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[9]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-200px -400px" }}
-            />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[10]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-400px -400px" }}
-            />
-          </div>
-
-          <div className="card">
-            <div
-              className="front img"
-              style={{
-                backgroundImage: `url(${doggoImages[11]})`
-              }}
-            />
-            <div
-              className="back"
-              style={{ backgroundPosition: "-600px -400px" }}
-            />
-          </div>
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[2]})`
+            }}
+          />
+          <div className="back" style={{ backgroundPositionX: "-400px" }} />
         </div>
-      </main>
-    );
-  }
-}
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[3]})`
+            }}
+          />
+          <div className="back" style={{ backgroundPositionX: "-600px" }} />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[4]})`
+            }}
+          />
+          <div className="back" style={{ backgroundPositionY: "-200px" }} />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[5]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-200px -200px" }}
+          />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[6]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-400px -200px" }}
+          />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[7]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-600px -200px" }}
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[8]})`
+            }}
+          />
+          <div className="back" style={{ backgroundPositionY: "-400px" }} />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[9]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-200px -400px" }}
+          />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[10]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-400px -400px" }}
+          />
+        </div>
+
+        <div className="card">
+          <div
+            className="front img"
+            style={{
+              backgroundImage: `url(${doggoImages[11]})`
+            }}
+          />
+          <div
+            className="back"
+            style={{ backgroundPosition: "-600px -400px" }}
+          />
+        </div>
+      </div>
+    </main>
+  );
+};
 
 export default DoggoSquare;
