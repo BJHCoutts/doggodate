@@ -21,14 +21,11 @@ const NavBar = props => {
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink exact to="/square">
-        Square
+      <NavLink exact to="/doggo_new_page">
+        Add a Doggo
       </NavLink>
-      <NavLink exact to="/doggoadd">
-        Doggo Add
-      </NavLink>
-      <NavLink exact to="/doggoindex">
-        Doggo Index
+      <NavLink exact to="/doggo_index">
+        Available Doggos
       </NavLink>
       <NavLink exact to="/map_page">
         Map

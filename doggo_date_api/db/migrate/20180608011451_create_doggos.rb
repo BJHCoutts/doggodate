@@ -11,6 +11,7 @@ class CreateDoggos < ActiveRecord::Migration[5.2]
       t.string :size
       t.string :category
       t.string :image
+      t.string :park
       t.references :user, foreign_key: true
 
       t.timestamps

@@ -49,13 +49,13 @@ class DoggoAdd extends Component {
     //   });
     // }
     // console.log(this.props);
-    let categoryOptions = this.props.categories.map(category => {
-      return (
-        <option key={category} value={category}>
-          {category}
-        </option>
-      );
-    });
+    // let categoryOptions = this.props.categories.map(category => {
+    //   return (
+    //     <option key={category} value={category}>
+    //       {category}
+    //     </option>
+    //   );
+    // });
 
     return (
       <div className="content">
@@ -93,10 +93,10 @@ class DoggoAdd extends Component {
             <label>Size</label>
             <input type="text" ref="size" />
           </div>
-          <div>
+          {/* <div>
             <label>Category</label>
             <select ref="category">{categoryOptions}</select>
-          </div>
+          </div> */}
           <input type="submit" value="Submit" />
         </form>
       </div>
