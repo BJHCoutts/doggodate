@@ -14,7 +14,6 @@ import paws from "../images/doggos/paws.jpg";
 import rebelWithACauseCallum from "../images/doggos/rebel_with_a_cause_callum.jpg";
 import toxicTim from "../images/doggos/toxic_tim.jpg";
 import wickedWitchWendy from "../images/doggos/wicked_witch_wendy.jpg";
-import logo from "../images/misc/logo.svg";
 
 const doggoImages = [
   archmageAlfie,

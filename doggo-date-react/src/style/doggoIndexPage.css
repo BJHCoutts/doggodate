@@ -55,11 +55,11 @@
 }
 
 .svg {
-  background-color: white;
-  border-radius: 7em;
+  /* background-color: white;
+  border-radius: 7em; */
   /* border-color: var(--primary-colour);
   border-width: 2em; */
-  padding: 2em;
+  /* padding: 2em; */
 }
 
 .index__end {

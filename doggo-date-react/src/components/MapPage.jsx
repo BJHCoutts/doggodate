@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { MapContainer } from "./MapContainer";
+import { MapContainer } from "./MapContainer";
 
 class MapPage extends Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class MapPage extends Component {
     return (
       <main>
         <h1>It's a Map</h1>
+        <MapContainer />
       </main>
     );
   }

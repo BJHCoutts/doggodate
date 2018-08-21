@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo:bold|Lato|Open+Sans");
 
-@import "~antd/dist/antd.css";
+/* @import "~antd/dist/antd.css"; */
 
 :root {
   --primary-colour: rgb(206, 116, 83);

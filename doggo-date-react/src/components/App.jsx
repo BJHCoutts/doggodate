@@ -16,7 +16,6 @@ import MapPage from "./MapPage";
 import Session from "../requests/session";
 import User from "../requests/user";
 import NotFoundPage from "./NotFoundPage";
-import { API_BASE } from "../requests/config";
 
 import sunYatSen from "../images/parks/classical-chinese-garden-image-via-Dr.-Sun-Yat-Sen-Classical-Chinese-Garden--e1517521757327.jpg";
 import crabPark from "../images/parks/crab-park-image-via-@cairnm-Instagram-e1517521600510.jpg";
@@ -122,14 +121,15 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/sign_in" exact component={SignInPage} />
-            {/* <AuthRoute
+            <AuthRoute
               isAuth={currentUser}
-              path="/doggoadd"
+              path="/doggo/new"
               exact
-              render={props => <DoggoAdd {...props} />}
-            /> */}
-            <Route path="/doggo_new_page" exact component={DoggoNewPage} />
-            <Route path="/doggo_index" exact component={DoggoIndexPage} />
+              component={DoggoNewPage}
+              render={props => <DoggoNewPage {...props} />}
+            />
+            <Route path="/doggo/new" exact component={DoggoNewPage} />
+            <Route path="/doggo/index" exact component={DoggoIndexPage} />
             <Route path="/map_page" exact component={MapPage} />
             <Route
               path="/sign_in"
