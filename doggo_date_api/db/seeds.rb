@@ -44,22 +44,25 @@ doggos = [
   "../images/doggos/rebel_with_a_cause_callum.jpg",
   "../images/doggos/toxic_tim.jpg",
   "../images/doggos/wicked_witch_wendy.jpg"
-
-  # "/assets/images/doggos/archmage_alfie.jpg",
-  # "/assets/images/doggos/bumble_bertha.jpg",
-  # "/assets/images/doggos/drill_bit_darel.jpg",
-  # "/assets/images/doggos/four_fists_phil.jpg",
-  # "/assets/images/doggos/inbread_dog.jpg",
-  # "/assets/images/doggos/knight_nicholas.jpg",
-  # "/assets/images/doggos/larry_the_lion.jpg",
-  # "/assets/images/doggos/lumberjack_laurence.jpg",
-  # "/assets/images/doggos/moneybags_michael.jpg",
-  # "/assets/images/doggos/nina_the_ninja.jpg",
-  # "/assets/images/doggos/paws.jpg",
-  # "/assets/images/doggos/rebel_with_a_cause_callum.jpg",
-  # "/assets/images/doggos/toxic_tim.jpg",
-  # "/assets/images/doggos/wicked_witch_wendy.jpg"
 ]
+
+parks = [
+  "Sun Yat Sen",
+  "Crab Park",
+  "Deer Lake",
+  "Dude Chilling",
+  "Hinge Park",
+  "Jericho",
+  "Jonathon Rogers",
+  "Kits Beach",
+  "Lighthouse Park",
+  "Pacific Spirit",
+  "Queen Elizabeth",
+  "Robson Square",
+  "Stanley Park",
+  "Trout Lake",
+  "Van Dusen"
+];
 
 10.times.each do
   Doggo.create(
@@ -73,7 +76,8 @@ doggos = [
   size: Faker::Dog.size,
   category: "any",
   image: doggos.sample,
-  user: User.all.sample
+  user: User.all.sample,
+  park: parks.sample,
   )
   
 end

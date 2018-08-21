@@ -11,7 +11,9 @@ class DoggoSerializer < ActiveModel::Serializer
     :size, 
     :category,
     :image,
-    :created_at
+    :created_at,
+    :user,
+    :park
   )
 
   def title
