@@ -1,20 +1,6 @@
-/* .bgimg-1,
-.bgimg-2,
-.bgimg-3 {
-} */
-
 .bgimg-1 {
   min-height: 32em;
 }
-
-/*
-.bgimg-2 {
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  min-height: 400px;
-} */
 
 .home__title_bar {
   position: sticky;
@@ -23,7 +9,7 @@
   background-color: transparent;
 }
 
-.titlebanner {
+.home__title_banner {
   display: flex;
   justify-content: center;
   color: white;

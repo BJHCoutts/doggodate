@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Session from "../requests/session";
+import "../style/signInPage.css";
+
+import Vert from "../images/doggos/group/d381811e46fbde96b7a7437ca25afea1.jpg";
 
 class SignInPage extends Component {
   constructor(props) {
@@ -48,9 +51,9 @@ class SignInPage extends Component {
   render() {
     const { errorMessage } = this.state;
     return (
-      <main>
-        <div className="baseDiv">
-          <h2>Sign In</h2>
+      <main className="sign-in__container">
+        <div className="baseDiv sign-in__form">
+          <h2>Please Sign In!</h2>
           <form onSubmit={this.createSession}>
             {errorMessage ? <p>{errorMessage}</p> : null}
             <div>
@@ -64,8 +67,21 @@ class SignInPage extends Component {
             </div>
 
             <input type="submit" value="Sign In" />
+
+            <br />
+
+            <input type="checkbox" />
+
+            <small>
+              Doggo ipsum wrinkler heck shibe such treat blop borkdrive, I am
+              bekom fat blep puggo most angery pupper I have ever seen. Wrinkler
+              dat tungg tho heckin good boys long bois blop ur givin me a spook,
+              wow such tempt wrinkler much ruin diet.
+            </small>
           </form>
         </div>
+        <div className="sign-in__image" />
+        <img src={Vert} className="sign-in__image" />
       </main>
     );
   }

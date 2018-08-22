@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Doggo from "../requests/doggo";
 import DoggoDetails from "./DoggoDetails";
+// import "./doggoshowpage.css";
 
 class DoggoShowPage extends Component {
   constructor(props) {

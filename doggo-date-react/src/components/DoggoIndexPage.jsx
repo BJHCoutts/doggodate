@@ -79,7 +79,12 @@ class DoggoIndexPage extends Component {
           ))}
         </ul>
         <div className="index__end">End of List</div>
-        <h1>Filtered List</h1>
+        {/* <h1>Filtered List</h1>
+          <ul>
+            {doggos.map((park) => {
+              return <Doggo park={parkName} key={doggos.id}/>
+            })}
+          </ul> */}
       </main>
     );
   }

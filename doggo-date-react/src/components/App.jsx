@@ -23,7 +23,7 @@ import crabPark from "../images/parks/crab-park-image-via-@cairnm-Instagram-e151
 import deerLake from "../images/parks/deer-lake-park-image-via-@robby.stankowska-Instagram-e1517521725737.jpg";
 import dudeChilling from "../images/parks/dude-chilling-park-image-via-@koseditionist-Instagram.jpg";
 import hingePark from "../images/parks/hinge-park-image-via-@xnt87-Instagram-e1517521773108.jpg";
-import jericho from "../images/parks/jericho-beach-image-via-Joe-Wolf%E2%80%8E-Facebook-e1517521581491.jpg";
+import jericho from "../images/parks/jericho-beach-image-via-Joe-Wolf.jpg";
 import jonathonRogers from "../images/parks/jonathan-rogers-park-image-via-@myopicman-Instagram-e1517521647348.jpg";
 import kitsBeach from "../images/parks/kitsilano-beach-image-via-GoToVan-Flickr-e1517520908246.jpg";
 import lighthousePark from "../images/parks/lighthouse-park-image-via-@szesc_blota_stop-Instagram-e1517521787903.jpg";
@@ -115,7 +115,6 @@ class App extends Component {
           className="parallax"
           style={{
             backgroundImage: `url(${parkImages[1]})`
-            // height: "100vh"
           }}
         >
           <NavBar
@@ -124,17 +123,15 @@ class App extends Component {
           />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/sign_in" exact component={SignInPage} />
+            <Route path="/doggo/index" exact component={DoggoIndexPage} />
             <AuthRoute
               isAuth={currentUser}
               path="/doggo/new"
               exact
-              component={DoggoNewPage}
               render={props => <DoggoNewPage {...props} />}
             />
             <Route path="/doggo/index/:id" component={DoggoShowPage} />
             <Route path="/doggo/new" exact component={DoggoNewPage} />
-            <Route path="/doggo/index" exact component={DoggoIndexPage} />
             <Route path="/map_page" exact component={MapPage} />
             <Route
               path="/sign_in"

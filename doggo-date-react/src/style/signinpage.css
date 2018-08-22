@@ -1,0 +1,22 @@
+.sign-in__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* padding: 2em; */
+  /* height: 100%; */
+  overflow: scroll;
+}
+
+.sign-in__form {
+  margin: 2vw 1vw 2vw 2vw;
+  min-width: 15em;
+}
+
+.sign-in__image {
+  align-self: flex-end;
+  height: 80vh;
+  border-radius: 2vw;
+  margin: 2vw 2vw 2vw 1vw;
+  /* background-image: "../images/doggos/group/d381811e46fbde96b7a7437ca25afea1.jpg"; */
+}

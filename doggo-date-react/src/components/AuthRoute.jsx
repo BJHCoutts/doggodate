@@ -1,31 +1,25 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { Authenticate } from "./Authenticator";
+import { Redirect, Route } from "react-router-dom";
+import SignInPage from "../";
 
 const AuthRoute = props => {
-  const { redirect = true, render, component: Component, ...restProps } = props;
+  const { isAuth = false, component: Component, render, ...restProps } = props;
 
   return (
-    <Authenticate>
-      {authProps => {
-        const { user, loading } = authProps;
-
-        if (loading) return null;
-
-        if (user === null && redirect) {
-          return <Redirect to="/session/new" />;
+    <Route
+      render={routeProps => {
+        if (isAuth) {
+          if (typeof render === "function") {
+            return render(routeProps);
+          } else {
+            return <Component {...routeProps} />;
+          }
         } else {
-          return (
-            <Route
-              render={routeProps => (
-                <Component {...routeProps} auth={authProps} />
-              )}
-              {...restProps}
-            />
-          );
+          return <Redirect to="/sign_in" />;
         }
       }}
-    </Authenticate>
+      {...restProps}
+    />
   );
 };
 
