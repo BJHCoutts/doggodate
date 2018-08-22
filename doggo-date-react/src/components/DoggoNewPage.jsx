@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Doggo from "../requests/doggo";
+import "../style/doggoNewPage.css";
 // import FormErrors from "./FormErrors";
 
 class DoggoNewPage extends Component {
@@ -47,60 +48,63 @@ class DoggoNewPage extends Component {
     const { validationErrors } = this.state;
 
     return (
-      <main>
-        <h2>Add a Doggo!</h2>
-        {/* <p>{validationErrors.map(e => `${e.field} ${e.message}`).join(", ")}</p> */}
-        <form onSubmit={this.createDoggo}>
-          <div>
-            <label htmlFor="name">Name</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="name" id="name" />
-          </div>
-          <div>
-            <label htmlFor="breed">Breed</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="breed" id="breed" />
-          </div>
-          <div>
-            <label htmlFor="sound">Sound</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="sound" id="sound" />
-          </div>
-          <div>
-            <label htmlFor="meme_phrase">Meme Phrase</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="meme_phrase" id="meme_phrase" />
-          </div>
-          <div>
-            <label htmlFor="age">Age</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="age" id="age" />
-          </div>
-          <div>
-            <label htmlFor="gender">Gender</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="gender" id="gender" />
-          </div>
-          <div>
-            <label htmlFor="coat_length">Coat Length</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="coat_length" id="coat_length" />
-          </div>
-          <div>
-            <label htmlFor="size">Size</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="size" id="size" />
-          </div>
-          <div>
-            <label htmlFor="category">Category</label> <br />
-            {/* <FormErrors forField="title" errors={validationErrors} /> */}
-            <input name="category" id="category" />
-          </div>
+      <main className="doggo-new-page__container">
+        <div className="doggo-new-page__container_form">
+          <h2>Add a Doggo!</h2>
+          {/* <p>{validationErrors.map(e => `${e.field} ${e.message}`).join(", ")}</p> */}
+          <form onSubmit={this.createDoggo}>
+            <div>
+              <label htmlFor="name">Name</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="name" id="name" />
+            </div>
+            <div>
+              <label htmlFor="breed">Breed</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="breed" id="breed" />
+            </div>
+            <div>
+              <label htmlFor="sound">Sound</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="sound" id="sound" />
+            </div>
+            <div>
+              <label htmlFor="meme_phrase">Meme Phrase</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="meme_phrase" id="meme_phrase" />
+            </div>
+            <div>
+              <label htmlFor="age">Age</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="age" id="age" />
+            </div>
+            <div>
+              <label htmlFor="gender">Gender</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="gender" id="gender" />
+            </div>
+            <div>
+              <label htmlFor="coat_length">Coat Length</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="coat_length" id="coat_length" />
+            </div>
+            <div>
+              <label htmlFor="size">Size</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="size" id="size" />
+            </div>
+            <div>
+              <label htmlFor="category">Category</label> <br />
+              {/* <FormErrors forField="title" errors={validationErrors} /> */}
+              <input name="category" id="category" />
+            </div>
 
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+            <div>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+        <div className="" />
       </main>
     );
   }

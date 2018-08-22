@@ -24,11 +24,6 @@ body {
   background-size: cover;
 }
 
-page__container {
-  display: flex;
-  margin: 2vh 2vw;
-}
-
 h1 {
   color: var(--secondary-colour);
   margin: 0 0 1em 0;
@@ -46,6 +41,12 @@ p {
   font-family: var(--text-body) !important;
 }
 
+input {
+  /* width: 50%; */
+  min-width: 20em;
+  margin: 0.5em 0 1.5em 0;
+}
+
 input[type="submit"] {
   padding: 0.75em 1.25em;
   color: var(--highlight-colour);
@@ -54,15 +55,12 @@ input[type="submit"] {
   cursor: pointer;
   border-radius: 0.5em;
   font-family: var(--text-body);
-  font-style: heavy;
   letter-spacing: 0.15em;
-  margin: 0.5em 0 1.5em 0;
+  width: 10em;
 }
 
 input[type="text"] {
   width: 50%;
-  min-width: 20em;
-  margin: 0.5em 0 1.5em 0;
 }
 
 input[type="checkbox"] {
@@ -71,8 +69,6 @@ input[type="checkbox"] {
 
 input[type="password"] {
   width: 50%;
-  min-width: 20em;
-  margin: 0.5em 0 1.5em 0;
 }
 
 small {
@@ -95,12 +91,12 @@ small {
   padding: 2em;
 }
 
-.content {
+/* .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   line-height: 4.5 rem;
-}
+} */
 
 .text {
   filter: revert;

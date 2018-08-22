@@ -1,0 +1,11 @@
+.doggo-new-page__container {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.doggo-new-page__container_form {
+  display: flex;
+  flex-direction: column;
+}
