@@ -12,7 +12,7 @@ super_user = User.create(
   admin: true
 )
 
-10.times do
+20.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
 
@@ -64,7 +64,16 @@ parks = [
   "Van Dusen"
 ];
 
-10.times.each do
+# https://dog.ceo/api/breeds/image/random
+
+# {
+#     "status": "success",
+#     "message": "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg"
+# }
+
+
+
+30.times.each do
   Doggo.create(
   name: Faker::Dog.name,
   breed: Faker::Dog.breed,

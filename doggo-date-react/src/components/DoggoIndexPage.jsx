@@ -40,24 +40,26 @@ class DoggoIndexPage extends Component {
               /> */}
               <img src={poop} className="svg" />
               <div className="index__doggo_card">
-                <div
-                  className="index__doggo_img"
-                  style={{
-                    backgroundImage: `url(${process.env.PUBLIC_URL}${
-                      doggo.image
-                    })`
-                  }}
-                />
+                <Link to={`/doggo/index/${doggo.id}`}>
+                  <div
+                    className="index__doggo_img"
+                    style={{
+                      backgroundImage: `url(${process.env.PUBLIC_URL}${
+                        doggo.image
+                      })`
+                    }}
+                  />
+                </Link>
                 <div className="index__doggo_text">
-                  <a className="index__doggo_name">
-                    <Link
-                      className="index__doggo_name"
-                      to={`/doggos/${doggo.id}`}
-                      style={{ fontSize: "1.25em" }}
-                    >
-                      {doggo.name}
-                    </Link>
-                  </a>
+                  {/* <a className="index__doggo_name"> */}
+                  <Link
+                    className="index__doggo_name"
+                    to={`/doggo/index/${doggo.id}`}
+                    style={{ fontSize: "1.25em" }}
+                  >
+                    {doggo.name}
+                  </Link>
+                  {/* </a> */}
                   <br />
                   <div className="index__doggo_details">
                     <span style={{ fontSize: "1em" }}>
@@ -77,6 +79,7 @@ class DoggoIndexPage extends Component {
           ))}
         </ul>
         <div className="index__end">End of List</div>
+        <h1>Filtered List</h1>
       </main>
     );
   }

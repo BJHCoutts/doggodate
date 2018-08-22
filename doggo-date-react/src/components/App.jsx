@@ -12,6 +12,7 @@ import Home from "./Home";
 import SignInPage from "./SignInPage";
 import DoggoNewPage from "./DoggoNewPage";
 import DoggoIndexPage from "./DoggoIndexPage";
+import DoggoShowPage from "./DoggoShowPage";
 import MapPage from "./MapPage";
 import Session from "../requests/session";
 import User from "../requests/user";
@@ -117,7 +118,10 @@ class App extends Component {
             // height: "100vh"
           }}
         >
-          <NavBar currentUser={this.state.currentUser} />
+          <NavBar
+            currentUser={this.state.currentUser}
+            onSignOut={this.destroySession}
+          />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/sign_in" exact component={SignInPage} />
@@ -128,6 +132,7 @@ class App extends Component {
               component={DoggoNewPage}
               render={props => <DoggoNewPage {...props} />}
             />
+            <Route path="/doggo/index/:id" component={DoggoShowPage} />
             <Route path="/doggo/new" exact component={DoggoNewPage} />
             <Route path="/doggo/index" exact component={DoggoIndexPage} />
             <Route path="/map_page" exact component={MapPage} />
