@@ -5,16 +5,3 @@
   /* justify-content: space-around;
   align-items: flex-start; */
 }
-
-.index__doggo_img {
-  position: relative;
-  display: inline-flex;
-  height: 20em;
-  width: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
-}

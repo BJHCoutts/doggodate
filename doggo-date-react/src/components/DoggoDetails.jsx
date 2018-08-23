@@ -1,30 +1,38 @@
 import React from "react";
-import "../style/doggoShowPage.css";
+import "../style/doggoDetails.css";
 
 const DoggoDetails = props => {
   return (
     <div>
-      <h3>{props.name}</h3>
+      <h2>{props.name}</h2>
       {/* <div
         className="index__doggo_img"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}${props.image})`
         }}
       /> */}
-      <p>{props.image}</p>
-      <img />
-      <p>Breed:</p>
-      <p>{props.breed}</p>
-      <p>Sound</p>
-      <p>{props.sound}</p>
-      <p>{props.meme_phrase}</p>
-      <p>{props.age}</p>
-      <p>{props.gender}</p>
-      <p>{props.coat_length}</p>
-      <p>{props.size}</p>
-      <p>{props.category}</p>
-      <p>{props.user.first_name}</p>
-      <p>{props.park}</p>
+      <div>{props.image}</div>
+      {/* <img /> */}
+      <div className="doggo__display_text">Breed:</div>
+      <div className="doggo__body_text">{props.breed}</div>
+      <div className="doggo__display_text">Sound</div>
+      <div className="doggo__body_text">{props.sound}</div>
+      <div className="doggo__display_text">Meme Phrase</div>
+      <div className="doggo__body_text">"{props.meme_phrase}"</div>
+      <div className="doggo__display_text">Age</div>
+      <div className="doggo__body_text">{props.age}</div>
+      <div className="doggo__display_text">Gender</div>
+      <div className="doggo__body_text">{props.gender}</div>
+      <div className="doggo__display_text">Coat Length</div>
+      <div className="doggo__body_text">{props.coat_length}</div>
+      <div className="doggo__display_text">Size</div>
+      <div className="doggo__body_text">{props.size}</div>
+      <div className="doggo__display_text">Category</div>
+      <div className="doggo__body_text">{props.category}</div>
+      <div className="doggo__display_text">Owner</div>
+      <div className="doggo__body_text">{props.user.first_name}</div>
+      <div className="doggo__display_text">Favourite Park</div>
+      <div className="doggo__body_text">{props.park}</div>
     </div>
   );
 };

@@ -51,7 +51,7 @@ class DoggoNewPage extends Component {
     return (
       <main className="doggo-new-page__container">
         <div className="doggo-new-page__container_form">
-          <h2>Add a Doggo!</h2>
+          <h2 style={{ margin: "0 0 1.5em 0" }}>Add a Doggo!</h2>
           {/* <p>{validationErrors.map(e => `${e.field} ${e.message}`).join(", ")}</p> */}
           <form onSubmit={this.createDoggo}>
             <div>

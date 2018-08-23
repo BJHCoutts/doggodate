@@ -30,7 +30,11 @@ class DoggoIndexPage extends Component {
     return (
       <main className="index__container_page">
         <div
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "1em 0 2em 0"
+          }}
           className="doggo-index__end"
         >
           <form onSubmit={this.handleSubmit}>

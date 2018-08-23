@@ -52,7 +52,7 @@ class DoggoShowPage extends Component {
         <h2>The Doggo Show</h2>
         <DoggoDetails {...doggo} />
         <br />
-        <button sty>Send this Doggo to the Farm</button>
+        <button>Send this Doggo to the Farm</button>
       </main>
     );
   }

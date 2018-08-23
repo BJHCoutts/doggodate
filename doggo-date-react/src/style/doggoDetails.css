@@ -1,0 +1,22 @@
+.index__doggo_img {
+  position: relative;
+  display: inline-flex;
+  height: 20em;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.doggo__display_text {
+  font-family: var(--text-display);
+  margin: 0 0 0.15em 0;
+}
+
+.doggo__body_text {
+  font-family: var(--text-body);
+  margin: 0 0 1em 0;
+}
