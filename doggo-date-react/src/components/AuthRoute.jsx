@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import SignInPage from "../";
+// import SignInPage from "./";
 
 const AuthRoute = props => {
   const { isAuth = false, component: Component, render, ...restProps } = props;

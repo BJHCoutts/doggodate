@@ -1,18 +1,21 @@
 import React from "react";
+import "../style/doggoShowPage.css";
 
 const DoggoDetails = props => {
   return (
     <div>
-      <p>{props.name}</p>
-      <div
+      <h3>{props.name}</h3>
+      {/* <div
         className="index__doggo_img"
         style={{
-          backgroundImage: `url(${props.image})`
+          backgroundImage: `url(${process.env.PUBLIC_URL}${props.image})`
         }}
-      />
+      /> */}
       <p>{props.image}</p>
-      <img src={props.image} />
+      <img />
+      <p>Breed:</p>
       <p>{props.breed}</p>
+      <p>Sound</p>
       <p>{props.sound}</p>
       <p>{props.meme_phrase}</p>
       <p>{props.age}</p>

@@ -15,6 +15,11 @@ export class MapContainer extends Component {
           }}
         >
           <Marker
+            title={"User Location"}
+            name={"User Location"}
+            position={{ lat: 49.2819605, lng: -123.1086604 }}
+          />
+          <Marker
             title={"Sun Yat Sen"}
             name={"Sun Yat Sen"}
             position={{ lat: 49.2798, lng: -123.1041 }}

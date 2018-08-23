@@ -48,10 +48,11 @@ class DoggoShowPage extends Component {
     }
 
     return (
-      <main>
+      <main className="doggo-show-page__container">
         <h2>The Doggo Show</h2>
         <DoggoDetails {...doggo} />
-        <button>Send this Doggo to the farm</button>
+        <br />
+        <button sty>Send this Doggo to the Farm</button>
       </main>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Doggo from "../requests/doggo";
+import Upload from "./Upload";
 import "../style/doggoNewPage.css";
 // import FormErrors from "./FormErrors";
 
@@ -104,7 +105,9 @@ class DoggoNewPage extends Component {
             </div>
           </form>
         </div>
-        <div className="" />
+        <div>
+          <Upload />
+        </div>
       </main>
     );
   }

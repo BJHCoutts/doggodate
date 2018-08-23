@@ -30,6 +30,9 @@ const NavBar = props => {
       <NavLink exact to="/map_page">
         Map
       </NavLink>
+      {/* <NavLink exact to="/cube">
+        Cube
+      </NavLink> */}
       {currentUser ? (
         <React.Fragment>
           <span>

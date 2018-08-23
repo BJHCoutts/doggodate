@@ -71,6 +71,19 @@ input[type="password"] {
   width: 50%;
 }
 
+button {
+  padding: 0.75em 1.25em;
+  color: var(--highlight-colour);
+  background: var(--secondary-colour);
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 0.5em;
+  font-family: var(--text-body);
+  letter-spacing: 0.15em;
+  width: 10em;
+  line-height: 1.5em;
+}
+
 small {
   font-family: var(--text-body);
 }

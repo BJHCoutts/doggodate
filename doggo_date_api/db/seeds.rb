@@ -8,7 +8,7 @@ super_user = User.create(
   last_name: "Highgarden",
   email: "hot@hot.com",
   password: PASSWORD,
-  address: "Vancouver, British Columbia, Canada",
+  address: "142 W Hastings St, Vancouver, BC V6B 1G8",
   admin: true
 )
 
@@ -47,7 +47,6 @@ doggos = [
 ]
 
 parks = [
-  "Sun Yat Sen",
   "Crab Park",
   "Deer Lake",
   "Dude Chilling",
@@ -60,6 +59,7 @@ parks = [
   "Queen Elizabeth",
   "Robson Square",
   "Stanley Park",
+  "Sun Yat Sen",
   "Trout Lake",
   "Van Dusen"
 ];
