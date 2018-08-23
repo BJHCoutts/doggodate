@@ -105,7 +105,7 @@ class DoggoNewPage extends Component {
             </div>
           </form>
         </div>
-        <div>
+        <div style={{ margin: "0 0 0 1em" }}>
           <Upload />
         </div>
       </main>
