@@ -50,6 +50,12 @@ class DoggoShowPage extends Component {
     return (
       <main className="doggo-show-page__container">
         <h2>The Doggo Show</h2>
+        <div
+          className="index__doggo_img"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}${doggo.image})`
+          }}
+        />
         <DoggoDetails {...doggo} />
         <br />
         <button>Send this Doggo to the Farm</button>

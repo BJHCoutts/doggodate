@@ -5,12 +5,19 @@ const DoggoDetails = props => {
   return (
     <div>
       <h2>{props.name}</h2>
+      <div
+        className="index__doggo_img"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}${props.image})`
+        }}
+      />
       {/* <div
         className="index__doggo_img"
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}${props.image})`
         }}
       /> */}
+      <img src={props.image} />
       <div>{props.image}</div>
       {/* <img /> */}
       <div className="doggo__display_text">Breed:</div>

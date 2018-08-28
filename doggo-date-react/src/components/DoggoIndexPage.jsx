@@ -13,8 +13,10 @@ class DoggoIndexPage extends Component {
 
     this.state = {
       doggos: [],
-      value: "Crab Park"
+      value: null
     };
+
+    this.handleBone.bind = this.handleBone.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +32,10 @@ class DoggoIndexPage extends Component {
       value: e.target.value
     });
   };
+
+  handleBone() {
+    console.log("Bone!");
+  }
 
   render() {
     const { doggos } = this.state;
@@ -71,6 +77,7 @@ class DoggoIndexPage extends Component {
         </div>
 
         <ul style={{ padding: 0, listStyle: "none" }}>
+          {/* this.state.value===null? */}
           {doggos
             .filter(d => d.park === this.state.value)
             .map((doggo, index) => (
@@ -118,7 +125,7 @@ class DoggoIndexPage extends Component {
                     </small>
                   </div>
                 </div>
-                <img src={bone} className="svg" />
+                <img src={bone} className="svg" onClick={this.handleBone} />
               </li>
             ))}
         </ul>

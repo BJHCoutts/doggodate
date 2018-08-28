@@ -20,3 +20,16 @@
   font-family: var(--text-body);
   margin: 0 0 1em 0;
 }
+
+.index__doggo_img {
+  position: relative;
+  display: inline-flex;
+  height: 20em;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
