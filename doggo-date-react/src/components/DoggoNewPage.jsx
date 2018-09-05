@@ -16,7 +16,6 @@ class DoggoNewPage extends Component {
   }
 
   createDoggo(event) {
-    event.preventDefault();
     const { currentTarget } = event;
 
     const formData = new FormData(currentTarget);
@@ -30,9 +29,10 @@ class DoggoNewPage extends Component {
       gender: formData.get("gender"),
       coat_length: formData.get("coat_length"),
       size: formData.get("size"),
-      category: formData.get("category")
+      category: formData.get("category"),
+      park: formData.get("park")
     }).then(data => {
-      // debugger;
+      debugger;
 
       if (data.status === 422) {
         this.setState({
@@ -40,9 +40,10 @@ class DoggoNewPage extends Component {
         });
       } else {
         const doggoId = data.id;
-        this.props.history.push(`/doggos/${doggoId}`);
+        this.props.history.push(`/doggo/index/${doggoId}`);
       }
     });
+    event.preventDefault();
   }
 
   render() {
@@ -98,6 +99,26 @@ class DoggoNewPage extends Component {
               <label htmlFor="category">Category</label> <br />
               {/* <FormErrors forField="title" errors={validationErrors} /> */}
               <input name="category" id="category" />
+            </div>
+            <div>
+              <label>Please pick your favourite park!</label> <br />
+              <select name="park" id="park">
+                <option value="Crab Park">Crab Park</option>
+                <option value="Deer Lake">Deer Lake</option>
+                <option value="Dude Chilling">Dude Chilling</option>
+                <option value="Hinge Park">Hinge Park</option>
+                <option value="Jericho">Jericho</option>
+                <option value="Jonathon Rogers">Jonathon Rogers</option>
+                <option value="Kits Beach">Kits Beach</option>
+                <option value="Lighthouse Park">Lighthouse Park</option>
+                <option value="Pacific Spirit">Pacific Spirit</option>
+                <option value="Queen Elizabeth">Queen Elizabeth</option>
+                <option value="Robson Square">Robson Square</option>
+                <option value="Stanley Park">Stanley Park</option>
+                <option value="Sun Yat Sen">Sun Yat Sen</option>
+                <option value="Trout Lake">Trout Lake</option>
+                <option value="Van Dusen">Van Dusen</option>
+              </select>
             </div>
 
             <div>

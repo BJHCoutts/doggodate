@@ -20,8 +20,8 @@ class Api::V1::DoggosController < Api::ApplicationController
   end
 
   def create
-    doggo = Doggo.new #doggo_params
-    # doggo.owner = current_user
+    doggo = Doggo.new doggo_params
+    doggo.user = current_user
 
     doggo.save!
     render json: { id: doggo.id }
@@ -38,20 +38,21 @@ class Api::V1::DoggosController < Api::ApplicationController
     @doggo ||= Doggo.find params[:id]
   end
 
-  # def doggo_params
-  #   params.require(:doggo).permit(
-  #     :id, 
-  #     :name, 
-  #     :breed, 
-  #     :sound, 
-  #     :meme_phrase, 
-  #     :age, 
-  #     :gender, 
-  #     :coat_length, 
-  #     :size, 
-  #     :category,
-  #     :image
-  #   )
-  # end
+  def doggo_params
+    params.require(:doggo).permit(
+      :id, 
+      :name, 
+      :breed, 
+      :sound, 
+      :meme_phrase, 
+      :age, 
+      :gender, 
+      :coat_length, 
+      :size, 
+      :category,
+      :park,
+      # :image
+    )
+  end
 
 end

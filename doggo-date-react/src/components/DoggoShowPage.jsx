@@ -11,21 +11,24 @@ class DoggoShowPage extends Component {
       loading: true,
       doggo: undefined
     };
+
+    this.destroyDoggo = this.destroyDoggo.bind(this);
   }
 
   componentDidMount() {
-    console.log("Hello World");
-    console.log(this.props);
     const doggoId = this.props.match.params.id;
 
     Doggo.one(doggoId).then(doggo => {
-      console.log(doggo);
-
       this.setState({
         loading: false,
         doggo: doggo
       });
     });
+  }
+
+  destroyDoggo() {
+    const doggoId = this.props.match.params.id;
+    Doggo.destroy(doggoId).then(this.props.history.push(`/`));
   }
 
   render() {
@@ -50,15 +53,9 @@ class DoggoShowPage extends Component {
     return (
       <main className="doggo-show-page__container">
         <h2>The Doggo Show</h2>
-        <div
-          className="index__doggo_img"
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}${doggo.image})`
-          }}
-        />
         <DoggoDetails {...doggo} />
         <br />
-        <button>Send this Doggo to the Farm</button>
+        <button onClick={this.destroyDoggo}>Send this Doggo to the Farm</button>
       </main>
     );
   }

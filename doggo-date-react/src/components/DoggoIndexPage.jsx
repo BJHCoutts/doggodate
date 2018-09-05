@@ -94,9 +94,7 @@ class DoggoIndexPage extends Component {
                     <div
                       className="index__doggo_img"
                       style={{
-                        backgroundImage: `url(${process.env.PUBLIC_URL}${
-                          doggo.image
-                        })`
+                        backgroundImage: `url(${doggo.image})`
                       }}
                     />
                   </Link>
