@@ -12,11 +12,7 @@ class Api::V1::DoggosController < Api::ApplicationController
   end
 
   def show    
-    render(
-      json: doggo,
-
-      # include: [ :owner]
-    )
+    render(json: doggo)
   end
 
   def create

@@ -74,7 +74,7 @@ parks = [
 
 
 50.times.each do
-  Doggo.create(
+  doggo = Doggo.create(
   name: Faker::Dog.name,
   breed: Faker::Dog.breed,
   sound: Faker::Dog.sound,
@@ -88,7 +88,14 @@ parks = [
   user: User.all.sample,
   park: parks.sample,
   )
-  
+
+  if doggo.valid?
+    Match.create(
+      doggo_id: doggo,
+      friend_id: Doggo.all.sample
+    )
+  end
+
 end
   
 doggos = Doggo.all
