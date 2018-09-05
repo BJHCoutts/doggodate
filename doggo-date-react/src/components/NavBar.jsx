@@ -21,6 +21,9 @@ const NavBar = props => {
       <NavLink exact to="/">
         Home
       </NavLink>
+      <NavLink exact to="/user">
+        User Profile
+      </NavLink>
       <NavLink exact to="/doggo/new">
         Add a Doggo
       </NavLink>

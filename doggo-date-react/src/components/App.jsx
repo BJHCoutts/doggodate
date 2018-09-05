@@ -11,6 +11,7 @@ import AuthRoute from "./AuthRoute";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import SignInPage from "./SignInPage";
+import UserProfilePage from "./UserProfilePage";
 import DoggoNewPage from "./DoggoNewPage";
 import DoggoIndexPage from "./DoggoIndexPage";
 import DoggoShowPage from "./DoggoShowPage";
@@ -87,8 +88,20 @@ class App extends Component {
               exact
               render={props => <DoggoNewPage {...props} />}
             />
-            <Route path="/doggo/index/:id" component={DoggoShowPage} />
-            <Route path="/doggo/new" exact component={DoggoNewPage} />
+            <AuthRoute
+              isAuth={currentUser}
+              path="/user"
+              exact
+              render={props => <UserProfilePage {...props} />}
+            />
+            {/* <Route
+              path="/user"
+              exact
+              component={UserProfilePage}
+              currentUser={this.props.currentUser}
+            /> */}
+            <Route path="/doggo/index/:id" exact component={DoggoShowPage} />
+            {/* <Route path="/doggo/new" exact component={DoggoNewPage} /> */}
             <Route path="/map_page" exact component={MapPage} />
             {/* <Route path="/cube" exact component={Cube} /> */}
             <Route
