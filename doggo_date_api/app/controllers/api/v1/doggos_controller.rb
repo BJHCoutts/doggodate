@@ -1,5 +1,13 @@
 class Api::V1::DoggosController < Api::ApplicationController
+  
+  def create
+    doggo = Doggo.new doggo_params
+    doggo.user = current_user
 
+    doggo.save!
+    render json: { id: doggo.id }
+  end
+  
   def index
     doggos = Doggo.order(created_at: :desc) #limit(10)
     render(
@@ -15,18 +23,11 @@ class Api::V1::DoggosController < Api::ApplicationController
     render(json: doggo)
   end
 
-  def create
-    doggo = Doggo.new doggo_params
-    doggo.user = current_user
 
-    doggo.save!
-    render json: { id: doggo.id }
-  end
-
-  def destroy
-    doggo.destroy
-    render(json: { status: 200 }, status:200)
-  end
+  # def destroy
+  #   doggo.destroy
+  #   render(json: { status: 200 }, status:200)
+  # end
 
   private
   

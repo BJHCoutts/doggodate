@@ -90,14 +90,21 @@ parks = [
   )
 
   if doggo.valid?
-    Match.create(
-      doggo_id: doggo,
-      friend_id: Doggo.all.sample
-    )
+    rand(0..10).times do
+      Match.create(
+        doggo_id: doggo.id,
+        friend_id: Doggo.all.sample.id,
+        friended_at: Faker::Date.between(3.months.ago, Date.today)
+      )
+    end
   end
 
 end
   
 doggos = Doggo.all
 
+matches = Match.all
+
 puts Cowsay.say "Created #{doggos.count} doggos", :stimpy
+
+puts Cowsay.say "created #{Match.all.count} matches"
