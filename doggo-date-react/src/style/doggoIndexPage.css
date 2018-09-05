@@ -63,3 +63,7 @@
   margin: 0;
   padding: 0;
 }
+
+.index__svg {
+  cursor: pointer;
+}

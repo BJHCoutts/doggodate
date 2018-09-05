@@ -16,7 +16,8 @@ class DoggoIndexPage extends Component {
       value: null
     };
 
-    this.handleBone.bind = this.handleBone.bind(this);
+    this.handlePoop = this.handlePoop.bind(this);
+    this.handleBone = this.handleBone.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,10 @@ class DoggoIndexPage extends Component {
       value: e.target.value
     });
   };
+
+  handlePoop() {
+    console.log("Poop!");
+  }
 
   handleBone() {
     console.log("Bone!");
@@ -77,63 +82,56 @@ class DoggoIndexPage extends Component {
         </div>
 
         <ul style={{ padding: 0, listStyle: "none" }}>
-          {/* this.state.value===null? */}
-          {doggos
-            .filter(d => d.park === this.state.value)
-            .map((doggo, index) => (
-              <li className="index__doggo_container" key={doggo.id}>
-                {/* <div
-                className="index__doggo_img"
-                style={{
-                  backgroundImage: `url(${DoggoImage.random.message})`
-                }}
-              /> */}
-                <img src={poop} className="svg" />
-                <div className="index__doggo_card">
-                  <Link to={`/doggo/index/${doggo.id}`}>
-                    <div
-                      className="index__doggo_img"
-                      style={{
-                        backgroundImage: `url(${doggo.image})`
-                      }}
-                    />
-                  </Link>
-                  <div className="index__doggo_text">
-                    <div style={{ margin: "0 0 .25em 0" }}>
-                      <Link
-                        className="index__doggo_name"
-                        to={`/doggo/index/${doggo.id}`}
-                      >
-                        {doggo.name}
-                      </Link>
-                    </div>
-
-                    <div className="index__doggo_subtitle">
-                      "{doggo.meme_phrase}"
-                    </div>
-
-                    <div className="index__doggo_details">
-                      <small>Favourite Park:</small>
-                      <br />
-                      <p style={{ fontSize: "1em" }}>{doggo.park}</p>
-                    </div>
-                    <small>
-                      Member since: <br />
-                      {new Date(doggo.created_at).toLocaleString()}
-                    </small>
+          {doggos.filter(d => d.park === this.state.value).map(doggo => (
+            <li className="index__doggo_container" key={doggo.id}>
+              <img
+                src={poop}
+                className="index__svg"
+                onClick={this.handlePoop}
+              />
+              <div className="index__doggo_card">
+                <Link to={`/doggo/index/${doggo.id}`}>
+                  <div
+                    className="index__doggo_img"
+                    style={{
+                      backgroundImage: `url(${doggo.image})`
+                    }}
+                  />
+                </Link>
+                <div className="index__doggo_text">
+                  <div style={{ margin: "0 0 .25em 0" }}>
+                    <Link
+                      className="index__doggo_name"
+                      to={`/doggo/index/${doggo.id}`}
+                    >
+                      {doggo.name}
+                    </Link>
                   </div>
+
+                  <div className="index__doggo_subtitle">
+                    "{doggo.meme_phrase}"
+                  </div>
+
+                  <div className="index__doggo_details">
+                    <small>Favourite Park:</small>
+                    <br />
+                    <p style={{ fontSize: "1em" }}>{doggo.park}</p>
+                  </div>
+                  <small>
+                    Member since: <br />
+                    {new Date(doggo.created_at).toLocaleString()}
+                  </small>
                 </div>
-                <img src={bone} className="svg" onClick={this.handleBone} />
-              </li>
-            ))}
+              </div>
+              <img
+                src={bone}
+                className="index__svg"
+                onClick={this.handleBone}
+              />
+            </li>
+          ))}
         </ul>
         <div className="index__end">End of List</div>
-        {/* <h1>Filtered List</h1>
-          <ul>
-            {doggos.map((park) => {
-              return <Doggo park={parkName} key={doggos.id}/>
-            })}
-          </ul> */}
       </main>
     );
   }

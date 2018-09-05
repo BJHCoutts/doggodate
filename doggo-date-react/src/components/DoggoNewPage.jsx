@@ -32,8 +32,6 @@ class DoggoNewPage extends Component {
       category: formData.get("category"),
       park: formData.get("park")
     }).then(data => {
-      debugger;
-
       if (data.status === 422) {
         this.setState({
           validationErrors: data.errors
