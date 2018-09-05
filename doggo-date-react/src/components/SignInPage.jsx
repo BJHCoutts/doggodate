@@ -52,36 +52,46 @@ class SignInPage extends Component {
     const { errorMessage } = this.state;
     return (
       <main className="sign-in__container">
-        <div className="baseDiv sign-in__form">
-          <h2>Please Sign In!</h2>
-          <form onSubmit={this.createSession}>
-            {errorMessage ? <p>{errorMessage}</p> : null}
-            <div>
-              <label htmlFor="email">Email</label> <br />
-              <input type="text" name="email" id="email" />
-            </div>
+        <div className=".sign-in__row_forms">
+          <div className="baseDiv sign-in__form">
+            <h2>Please Sign In!</h2>
+            <form onSubmit={this.createSession}>
+              {errorMessage ? <p>{errorMessage}</p> : null}
+              <div>
+                <label htmlFor="email">Email</label> <br />
+                <input type="text" name="email" id="email" />
+              </div>
 
-            <div>
-              <label htmlFor="password">Password</label> <br />
-              <input type="password" name="password" id="password" />
-            </div>
+              <div>
+                <label htmlFor="password">Password</label> <br />
+                <input type="password" name="password" id="password" />
+              </div>
 
-            <input type="submit" value="Sign In" />
+              <input type="submit" value="Sign In" />
 
-            <br />
+              <br />
 
-            <input type="checkbox" />
+              <input type="checkbox" />
 
-            <small>
-              Doggo ipsum wrinkler heck shibe such treat blop borkdrive, I am
-              bekom fat blep puggo most angery pupper I have ever seen. Wrinkler
-              dat tungg tho heckin good boys long bois blop ur givin me a spook,
-              wow such tempt wrinkler much ruin diet.
-            </small>
-          </form>
+              <small>
+                Doggo ipsum wrinkler heck shibe such treat blop borkdrive, I am
+                bekom fat blep puggo most angery pupper I have ever seen.
+                Wrinkler dat tungg tho heckin good boys long bois blop ur givin
+                me a spook, wow such tempt wrinkler much ruin diet.
+              </small>
+            </form>
+          </div>
+          <div className="baseDiv sign-in__form sign-in__create_account">
+            <h3>Don't Have an account?</h3>
+            <h4>Please click here to create one</h4>
+            <button>Create account</button>
+          </div>
         </div>
-        <div className="sign-in__image" />
-        <img src={Vert} className="sign-in__image" />
+        <div
+          className="sign-in__image"
+          style={{ backgroundImage: `url(${Vert})` }}
+        />
+        {/* <img src={Vert} className="sign-in__image" /> */}
       </main>
     );
   }
