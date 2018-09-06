@@ -82,8 +82,10 @@ class SignInPage extends Component {
             </form>
           </div>
           <div className="baseDiv sign-in__form sign-in__create_account">
-            <h3>Don't Have an account?</h3>
-            <h4>Please click here to create one</h4>
+            <h3 style={{ margin: "0 0 .5em 0" }}>Don't Have an account?</h3>
+            <h5 style={{ margin: "0 0 1em 0" }}>
+              Please click here to create one
+            </h5>
             <button>Create account</button>
           </div>
         </div>

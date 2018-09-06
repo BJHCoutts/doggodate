@@ -84,24 +84,31 @@ class App extends Component {
             <Route path="/doggo/index" exact component={DoggoIndexPage} />
             <AuthRoute
               isAuth={currentUser}
-              path="/doggo/new"
-              exact
-              render={props => <DoggoNewPage {...props} />}
-            />
-            <AuthRoute
-              isAuth={currentUser}
               path="/user"
               exact
-              render={props => <UserProfilePage {...props} />}
+              render={props => (
+                <UserProfilePage
+                  currentUser={this.state.currentUser}
+                  {...props}
+                />
+              )}
+              // currentUser={this.state.currentUser}
             />
             {/* <Route
               path="/user"
               exact
               component={UserProfilePage}
-              currentUser={this.props.currentUser}
-            /> */}
+              currentUser={this.state.currentUser}
+              // {...props}
+            />
+            )} /> */}
+            <AuthRoute
+              isAuth={currentUser}
+              path="/doggo/new"
+              exact
+              render={props => <DoggoNewPage {...props} />}
+            />
             <Route path="/doggo/index/:id" exact component={DoggoShowPage} />
-            {/* <Route path="/doggo/new" exact component={DoggoNewPage} /> */}
             <Route path="/map_page" exact component={MapPage} />
             {/* <Route path="/cube" exact component={Cube} /> */}
             <Route

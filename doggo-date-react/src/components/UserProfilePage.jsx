@@ -10,7 +10,7 @@ class UserProfilePage extends Component {
     return (
       <div className="main">
         <h1>TEST</h1>
-        {/* <h1>{this.props}</h1> */}
+        <h1>{this.props.currentUser.full_name}</h1>
       </div>
     );
   }
