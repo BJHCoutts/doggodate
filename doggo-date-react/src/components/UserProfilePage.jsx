@@ -9,8 +9,16 @@ class UserProfilePage extends Component {
   render() {
     return (
       <div className="main">
-        <h1>TEST</h1>
-        <h1>{this.props.currentUser.full_name}</h1>
+        <div className="baseDiv" style={{ margin: "1em" }}>
+          <h1>{this.props.currentUser.full_name}</h1>
+        </div>
+        <div className="baseDiv" style={{ margin: "1em" }}>
+          <ul>
+            {this.props.currentUser.doggos.map((doggo, index) => (
+              <li key={index}>{doggo.name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
