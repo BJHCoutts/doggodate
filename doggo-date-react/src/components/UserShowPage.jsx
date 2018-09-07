@@ -1,18 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../style/userProfilePage.css";
+import "../style/userShowPage.css";
 
-class UserProfilePage extends Component {
+class UserShowPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.addDoggoLink = this.addDoggoLink.bind(this);
   }
+
+  addDoggoLink() {
+    this.props.history.push("/doggo/new");
+  }
+
   render() {
     return (
       <div className="main">
         <div className="baseDiv" style={{ margin: "1em" }}>
           <h1>{this.props.currentUser.full_name}</h1>
-          <p>{this.props.currentUser.avatar}</p>
+          <span>{this.props.currentUser.email}</span>
+          <p>{this.props.currentUser.address}</p>
         </div>
         <div className="baseDiv" style={{ margin: "1em" }}>
           <h2 style={{ margin: "0 0 1em 0" }}>
@@ -35,10 +43,11 @@ class UserProfilePage extends Component {
               </div>
             ))}
           </div>
+          <button onClick={this.addDoggoLink}>Add a Doggo</button>
         </div>
       </div>
     );
   }
 }
 
-export default UserProfilePage;
+export default UserShowPage;

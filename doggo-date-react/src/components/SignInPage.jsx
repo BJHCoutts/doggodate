@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Session from "../requests/session";
 import "../style/signInPage.css";
 
@@ -13,6 +14,7 @@ class SignInPage extends Component {
     };
 
     this.createSession = this.createSession.bind(this);
+    this.createAccountLink = this.createAccountLink.bind(this);
   }
 
   createSession(event) {
@@ -46,6 +48,10 @@ class SignInPage extends Component {
         this.props.history.push("/");
       }
     });
+  }
+
+  createAccountLink() {
+    this.props.history.push("/user/new");
   }
 
   render() {
@@ -86,7 +92,8 @@ class SignInPage extends Component {
             <h5 style={{ margin: "0 0 1em 0" }}>
               Please click here to create one
             </h5>
-            <button>Create account</button>
+
+            <button onClick={this.createAccountLink}>Create account</button>
           </div>
         </div>
         <div

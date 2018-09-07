@@ -48,7 +48,7 @@ const NavBar = props => {
         </React.Fragment>
       ) : (
         <NavLink className="supports-classname" exact to="/sign_in">
-          Sign In
+          Sign In/Create Account
         </NavLink>
       )}
     </nav>

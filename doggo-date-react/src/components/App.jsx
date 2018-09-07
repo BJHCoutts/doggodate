@@ -11,12 +11,14 @@ import AuthRoute from "./AuthRoute";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import SignInPage from "./SignInPage";
-import UserProfilePage from "./UserProfilePage";
+import UserNewPage from "./UserNewPage";
+import UserShowPage from "./UserShowPage";
 import DoggoNewPage from "./DoggoNewPage";
 import DoggoIndexPage from "./DoggoIndexPage";
 import DoggoShowPage from "./DoggoShowPage";
 import MapPage from "./MapPage";
 // import Cube from "./Cube";
+
 import Session from "../requests/session";
 import User from "../requests/user";
 import NotFoundPage from "./NotFoundPage";
@@ -82,26 +84,15 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/doggo/index" exact component={DoggoIndexPage} />
+            <Route path="/user/new" exact component={UserNewPage} />
             <AuthRoute
               isAuth={currentUser}
               path="/user"
               exact
               render={props => (
-                <UserProfilePage
-                  currentUser={this.state.currentUser}
-                  {...props}
-                />
+                <UserShowPage currentUser={this.state.currentUser} {...props} />
               )}
-              // currentUser={this.state.currentUser}
             />
-            {/* <Route
-              path="/user"
-              exact
-              component={UserProfilePage}
-              currentUser={this.state.currentUser}
-              // {...props}
-            />
-            )} /> */}
             <AuthRoute
               isAuth={currentUser}
               path="/doggo/new"
