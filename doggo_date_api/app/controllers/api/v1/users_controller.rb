@@ -5,6 +5,15 @@ class Api::V1::UsersController < Api::ApplicationController
     render json: current_user
   end
 
+  def user_avatar(user_id)
+    user = User.find!(user_id)
+    if user.avatar.attached?
+      image_tag user.avatar
+    else
+      image_tag "../images/Littlefinger_Main.jpg"
+    end
+  end
+
   def index
     @users = User.order(created_at: :desc) #limit(10)
     render json: @users
@@ -17,7 +26,7 @@ class Api::V1::UsersController < Api::ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :first_name, :last_name, :email, :address
+      :first_name, :last_name, :email, :address, :avatar
     )
   end
 

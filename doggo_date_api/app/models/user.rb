@@ -5,6 +5,8 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  has_one_attached :avatar
+
   # Provides user authentication features on the model
   # it's called in. Requires a column named `password_digest`
   # and the gem `bcrypt`

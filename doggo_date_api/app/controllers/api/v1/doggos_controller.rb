@@ -48,7 +48,8 @@ class Api::V1::DoggosController < Api::ApplicationController
       :size, 
       :category,
       :park,
-      # :image
+      :avatar,
+      :image,
     )
   end
 

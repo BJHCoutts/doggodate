@@ -9,28 +9,32 @@ super_user = User.create(
   email: "hot@hot.com",
   password: PASSWORD,
   address: "142 W Hastings St, Vancouver, BC V6B 1G8",
-  admin: true
+  admin: true,
+  # avatar: "../images/Littlefinger_Main.jpg",
 )
-
+  
 30.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-
+  
   User.create(
     first_name: first_name,
     last_name: last_name,
     address: "Paris Avenue, Earlwood, New South Wales, Australia",
     email: "#{first_name.downcase}.#{last_name.downcase}@hot.com",
-    password: PASSWORD
+    password: PASSWORD,
   )
+
 end
-
+  
+# User.first.avatar.attach(io: File.open("../images/Littlefinger_Main.jpg"), filename: "Littlefinger_Main.jpg", content_type: "image/jpg")
+  
 users = User.all
-
+  
 puts Cowsay.say "Created #{users.count} users", :ren
-
+  
 doggos = [
-  "../images/doggos/archmage_alfie.jpg",
+      "../images/doggos/archmage_alfie.jpg",
   "../images/doggos/bumble_bertha.jpg",
   "../images/doggos/drill_bit_darel.jpg",
   "../images/doggos/four_fists_phil.jpg",
@@ -43,7 +47,7 @@ doggos = [
   "../images/doggos/paws.jpg",
   "../images/doggos/rebel_with_a_cause_callum.jpg",
   "../images/doggos/toxic_tim.jpg",
-  "../images/doggos/wicked_witch_wendy.jpg"
+  "../images/doggos/wicked_witch_wendy.jpg",
 ]
 
 parks = [
@@ -61,7 +65,7 @@ parks = [
   "Stanley Park",
   "Sun Yat Sen",
   "Trout Lake",
-  "Van Dusen"
+  "Van Dusen",
 ];
 
 # https://dog.ceo/api/breeds/image/random
@@ -94,7 +98,7 @@ parks = [
       Match.create(
         doggo_id: doggo.id,
         friend_id: Doggo.all.sample.id,
-        friended_at: Faker::Date.between(3.months.ago, Date.today)
+        friended_at: Faker::Date.between(3.months.ago, Date.today),
       )
     end
   end
@@ -107,4 +111,4 @@ matches = Match.all
 
 puts Cowsay.say "Created #{doggos.count} doggos", :stimpy
 
-puts Cowsay.say "created #{Match.all.count} matches"
+puts Cowsay.say "created #{Match.all.count} matches", :sheep
