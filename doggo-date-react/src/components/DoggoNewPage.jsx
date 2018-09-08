@@ -61,7 +61,7 @@ class DoggoNewPage extends Component {
             <input name="name" id="name" />
           </div>
           <div>
-            <label htmlFor="breed">Breed</label> <br />
+            <label>Breed</label> <br />
             {/* <FormErrors forField="title" errors={validationErrors} /> */}
             <input name="breed" id="breed" />
           </div>

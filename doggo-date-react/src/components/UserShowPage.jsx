@@ -19,6 +19,10 @@ class UserShowPage extends Component {
       <div className="main">
         <div className="baseDiv" style={{ margin: "1em" }}>
           <h1>{this.props.currentUser.full_name}</h1>
+          <img
+            src={this.props.currentUser.avatar}
+            style={{ borderRadius: "50%" }}
+          />
           <span>{this.props.currentUser.email}</span>
           <p>{this.props.currentUser.address}</p>
         </div>
