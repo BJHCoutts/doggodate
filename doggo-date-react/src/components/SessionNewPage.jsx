@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Session from "../requests/session";
-import "../style/signInPage.css";
+import "../style/sessionNewPage.css";
 
 import Vert from "../images/doggos/group/d381811e46fbde96b7a7437ca25afea1.jpg";
 
-class SignInPage extends Component {
+class SessionNewPage extends Component {
   constructor(props) {
     super(props);
 
@@ -106,4 +105,4 @@ class SignInPage extends Component {
   }
 }
 
-export default SignInPage;
+export default SessionNewPage;

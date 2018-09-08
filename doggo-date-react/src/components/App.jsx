@@ -10,7 +10,7 @@ import parkImages from "../requests/parkImages.js";
 import AuthRoute from "./AuthRoute";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import SignInPage from "./SignInPage";
+import SessionNewPage from "./SessionNewPage";
 import UserNewPage from "./UserNewPage";
 import UserShowPage from "./UserShowPage";
 import DoggoNewPage from "./DoggoNewPage";
@@ -100,12 +100,17 @@ class App extends Component {
               render={props => <DoggoNewPage {...props} />}
             />
             <Route path="/doggo/index/:id" exact component={DoggoShowPage} />
-            <Route path="/map_page" exact component={MapPage} />
+            <Route
+              path="/map_page"
+              render={props => (
+                <MapPage {...props} currentUser={this.state.currentUser} />
+              )}
+            />
             {/* <Route path="/cube" exact component={Cube} /> */}
             <Route
               path="/sign_in"
               render={props => (
-                <SignInPage {...props} onSignIn={this.getUser} />
+                <SessionNewPage {...props} onSignIn={this.getUser} />
               )}
             />
             <Route component={NotFoundPage} />

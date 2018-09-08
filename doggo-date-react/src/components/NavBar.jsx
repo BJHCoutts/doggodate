@@ -10,7 +10,14 @@ const NavBar = props => {
     onSignOut();
   };
 
-  const greeting_arr = ["Bork, Bork, ", "Arf, Arf, ", "Woof, Woof, "];
+  const greeting_arr = [
+    "Bork, Bork, ",
+    "Arf, Arf, ",
+    "Woof, Woof, ",
+    "Awoooo! ",
+    "Yip! Yip! ",
+    "RRRRRRuff! "
+  ];
 
   const greeting = () => {
     return greeting_arr[Math.floor(Math.random() * greeting_arr.length)];

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 
 export class MapContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
@@ -14,11 +17,15 @@ export class MapContainer extends Component {
             lng: -123.12
           }}
         >
-          <Marker
+          {/* make only load if user is present  */}
+          {/* <Marker
             title={"User Location"}
             name={"User Location"}
-            position={{ lat: 49.2819605, lng: -123.1086604 }}
-          />
+            position={{
+              lat: this.props.currentUser.latitude,
+              lng: this.props.currentUser.longitude
+            }}
+          /> */}
           <Marker
             title={"Sun Yat Sen"}
             name={"Sun Yat Sen"}

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+
 import User from "../requests/user";
+
+import "../style/userNewPage.css";
 
 class UserNewPage extends Component {
   constructor(props) {
@@ -40,8 +43,54 @@ class UserNewPage extends Component {
   render() {
     const { validationErrors } = this.state;
     return (
-      <main>
-        <h1>Test</h1>
+      <main className="user-new-page__container">
+        <form
+          onSubmit={this.createUser}
+          className="user-new-page__container_form"
+        >
+          <h2 style={{ margin: "0 0 1.5em 0" }}>Create New User</h2>
+          <label htmlFor="first_name">
+            First Name
+            <br />
+            <input name="first_name" id="first_name" />
+          </label>
+
+          <br />
+
+          <label htmlFor="last_name">
+            Last Name
+            <br />
+            <input name="last_name" id="last_name" />
+          </label>
+
+          <br />
+
+          <label htmlFor="email">
+            Email
+            <br />
+            <input name="email" id="email" />
+          </label>
+
+          <br />
+
+          <label htmlFor="address">
+            Address
+            <br />
+            <input name="address" id="address" />
+          </label>
+
+          <br />
+
+          <label htmlFor="password">
+            Password
+            <br />
+            <input name="password" id="password" />
+          </label>
+
+          <br />
+
+          <input type="submit" value="submit" />
+        </form>
       </main>
     );
   }
