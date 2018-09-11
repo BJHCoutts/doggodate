@@ -20,14 +20,19 @@ export class MapContainer extends Component {
           }}
         >
           {/* make only load if user is present  */}
-          {/* <Marker
-            title={"User Location"}
-            name={"User Location"}
-            position={{
-              lat: this.props.currentUser.latitude,
-              lng: this.props.currentUser.longitude
-            }}
-          /> */}
+
+          {this.props.currentUser ? (
+            <Marker
+              title={"User Location"}
+              name={"User Location"}
+              position={{
+                lat: this.props.currentUser.latitude,
+                lng: this.props.currentUser.longitude
+              }}
+            />
+          ) : (
+            <div />
+          )}
           <Marker
             title={"Sun Yat Sen"}
             name={"Sun Yat Sen"}

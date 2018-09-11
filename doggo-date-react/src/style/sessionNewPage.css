@@ -3,14 +3,20 @@
   flex-direction: row;
   justify-content: space-between;
   /* align-items: space-between; */
-  /* padding: 2em; */
+  padding: 51px 0 0 0;
   /* height: 100%; */
   overflow: scroll;
 }
 
-.sign-in__row_forms {
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width: 816px/*976px*/) {
+  .sign-in__container {
+    padding: 70px 0 0 0;
+  }
+}
+@media only screen and (max-width: 616px) {
+  .sign-in__container {
+    padding: 89px 0 0 0;
+  }
 }
 
 .sign-in__form {
