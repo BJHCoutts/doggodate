@@ -28,7 +28,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loading: true,
+      loading: false,
       currentUser: undefined
     };
 
@@ -71,7 +71,8 @@ class App extends Component {
 
     return (
       <Router>
-        <main
+        <div
+          style={{ padding: 0 }}
           className="parallax"
           style={{
             backgroundImage: `url(${parkImages[0]})`
@@ -115,7 +116,7 @@ class App extends Component {
             />
             <Route component={NotFoundPage} />
           </Switch>
-        </main>
+        </div>
       </Router>
     );
   }

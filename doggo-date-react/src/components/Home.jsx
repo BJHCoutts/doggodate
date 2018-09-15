@@ -43,7 +43,7 @@ const Home = () => {
       </div>
 
       <div className="bar" />
-      <div style={{ padding: "1em" }}>
+      <article style={{ padding: "1em" }}>
         <h2>Bork!</h2>
         <p>
           Doggo ipsum stop it fren smol borking doggo with a long snoot for pats
@@ -86,7 +86,7 @@ const Home = () => {
           wrinkler.
         </p>
         <h2>Yipp!</h2>
-      </div>
+      </article>
       <div className="bar" />
     </main>
   );

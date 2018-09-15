@@ -24,6 +24,23 @@ body {
   background-size: cover;
 }
 
+main {
+  width: 100%;
+  padding: 51px 0 0 0;
+}
+
+@media only screen and (max-width: 816px/*976px*/) {
+  main {
+    padding: 70px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  main {
+    padding: 89px 0 0 0;
+  }
+}
+
 h1 {
   color: var(--secondary-colour);
   margin: 0 0 0.5em 0;

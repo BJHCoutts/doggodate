@@ -10,7 +10,7 @@ document.addEventListener("click", () => {
 
 const DoggoSquare = () => {
   return (
-    <main className="container">
+    <section className="container">
 
       <div className="row">
         <div className="card">
@@ -155,7 +155,7 @@ const DoggoSquare = () => {
           />
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@ import "../style/doggoDetails.css";
 
 const DoggoDetails = props => {
   return (
-    <div>
+    <main>
       <h2>{props.name}</h2>
       <div
         className="profile__doggo_img"
@@ -32,7 +32,7 @@ const DoggoDetails = props => {
       <div className="doggo__body_text">{props.user.first_name}</div>
       <div className="doggo__display_text">Favourite Park</div>
       <div className="doggo__body_text">{props.park}</div>
-    </div>
+    </main>
   );
 };
 

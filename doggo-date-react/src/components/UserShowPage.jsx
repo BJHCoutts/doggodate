@@ -16,7 +16,7 @@ class UserShowPage extends Component {
 
   render() {
     return (
-      <div className="main">
+      <main className="main user__container">
         <div className="baseDiv" style={{ margin: "1em" }}>
           <h1>{this.props.currentUser.full_name}</h1>
           <img
@@ -49,7 +49,7 @@ class UserShowPage extends Component {
           </div>
           <button onClick={this.addDoggoLink}>Add a Doggo</button>
         </div>
-      </div>
+      </main>
     );
   }
 }

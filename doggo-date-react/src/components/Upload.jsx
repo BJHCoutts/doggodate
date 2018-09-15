@@ -40,7 +40,7 @@ class Upload extends Component {
     }
 
     return (
-      <div>
+      <section>
         <form onSubmit={this._handleSubmit}>
           <input type="file" onChange={this._handleImageChange} />
           <button type="submit" onClick={this._handleSubmit}>
@@ -48,7 +48,7 @@ class Upload extends Component {
           </button>
         </form>
         {$imagePreview}
-      </div>
+      </section>
     );
   }
 }
