@@ -5,6 +5,8 @@ class Api::V1::UsersController < Api::ApplicationController
     render json: current_user
   end
 
+  # self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'placeholder-icon.png')), filename: 'Littlefinger_Main.jpg', content_type: 'image/png')
+
   def user_avatar(user_id)
     user = User.find!(user_id)
     if user.avatar.attached?

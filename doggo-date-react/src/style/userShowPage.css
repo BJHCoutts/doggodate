@@ -2,13 +2,38 @@ p {
   margin: 0 0 0.5em 0;
 }
 
+/* .innerDiv {
+  background-color: var(--highlight-colour);
+  margin: 0;
+} */
+
+.baseDiv {
+  background-color: var(--highlight-colour);
+  /* padding: 1em; */
+  border: solid var(--primary-colour) 0.5em;
+}
+.user__avatar {
+  height: 14em;
+  width: 14em;
+  background-position: centered;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.18em solid var(--secondary-colour);
+  border-radius: 50%;
+  background-image: "../images/users/Littlefinger_Main.jpg";
+}
+
+.user__info {
+  margin: 0 0 0 1em;
+}
+
 .user__doggo_image {
   height: 10em;
   width: 10em;
   background-position: centered;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 0.15em solid var(--secondary-colour);
+  border: 0.18em solid var(--secondary-colour);
 }
 
 .user__doggo_container {

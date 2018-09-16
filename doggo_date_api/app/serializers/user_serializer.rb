@@ -5,6 +5,7 @@ class UserSerializer < ActiveModel::Serializer
     :first_name,
     :last_name,
     :full_name,
+    :avatar,
     :doggos,
     :email,
     :address,
