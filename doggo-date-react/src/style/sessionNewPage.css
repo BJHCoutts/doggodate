@@ -27,9 +27,4 @@
 .sign-in__create_account {
   display: flex;
   flex-direction: column;
-  justify-self: flex-end;
-}
-
-button {
-  /* margin: 1em 0 0 0; */
 }

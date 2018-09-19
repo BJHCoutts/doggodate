@@ -72,7 +72,11 @@ class SessionNewPage extends Component {
                 <input type="password" name="password" id="password" />
               </div>
 
-              <input type="submit" value="Sign In" />
+              <input
+                type="submit"
+                value="Sign In"
+                style={{ margin: "2em 0 1.5em 0" }}
+              />
 
               <br />
 
@@ -88,7 +92,7 @@ class SessionNewPage extends Component {
           </div>
           <div className="baseDiv sign-in__form sign-in__create_account">
             <h3 style={{ margin: "0 0 .5em 0" }}>Don't Have an account?</h3>
-            <h5 style={{ margin: "0 0 1em 0" }}>
+            <h5 style={{ margin: "0 0 1.5em 0" }}>
               Please click here to create one
             </h5>
 
@@ -99,7 +103,6 @@ class SessionNewPage extends Component {
           className="sign-in__image"
           style={{ backgroundImage: `url(${Vert})` }}
         />
-        {/* <img src={Vert} className="sign-in__image" /> */}
       </main>
     );
   }

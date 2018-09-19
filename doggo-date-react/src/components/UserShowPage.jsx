@@ -19,7 +19,7 @@ class UserShowPage extends Component {
   render() {
     return (
       <main className="main user__container">
-        <div className="baseDiv" style={{ margin: "1em" }}>
+        <div className="baseDiv user_div" style={{ margin: "1em" }}>
           <div className="innerDiv user__doggo_container">
             <div
               className="user__avatar"
@@ -29,13 +29,15 @@ class UserShowPage extends Component {
             />
             <div className="user__info">
               <h1>{this.props.currentUser.full_name}</h1>
-              <span>{this.props.currentUser.email}</span>
+              <h4>Registered Email:</h4>
+              <p>{this.props.currentUser.email}</p>
+              <h4>Home location:</h4>
               <p>{this.props.currentUser.address}</p>
             </div>
           </div>
         </div>
         <div className="baseDiv" style={{ margin: "1em" }}>
-          <h3 style={{ margin: "0 0 1em 0" }}>
+          <h3 style={{ margin: "0 0 1.5em 0" }}>
             Doggos that this user belongs to:
           </h3>
           <div className="user__doggo_container">
@@ -49,7 +51,7 @@ class UserShowPage extends Component {
                   />
                 </Link>
 
-                <p>
+                <p style={{ margin: "0 0 1em 0" }}>
                   <Link to={`doggo/index/${doggo.id}`}>{doggo.name}</Link>
                 </p>
               </div>
