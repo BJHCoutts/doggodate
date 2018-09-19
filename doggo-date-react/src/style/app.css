@@ -29,13 +29,13 @@ main {
   padding: 51px 0 0 0;
 }
 
-@media only screen and (max-width: 984px/*816px 976px*/) {
+@media only screen and (max-width: 816px /*984px 949px 976px*/) {
   main {
     padding: 70px 0 0 0;
   }
 }
 
-@media only screen and (max-width: 709px/*665px*/) {
+@media only screen and (max-width: 657px/*709px665px*/) {
   main {
     padding: 89px 0 0 0;
   }

@@ -1,14 +1,45 @@
-.profile__doggo_img {
+h1 {
+  text-align: center;
+}
+
+.profile__doggo_img_container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-colour);
+  padding: 1em;
+  border-bottom: 0.2em solid var(--secondary-colour);
+}
+
+.profile__doggo_img_box {
   position: relative;
-  display: inline-flex;
-  height: 20em;
-  width: 100%;
-  background-position: 50% 50%;
+  width: 50%;
+  background-color: var(--primary-colour);
+}
+
+.profile__doggo_img_box:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  z-index: 1;
+}
+
+.profile__doggo_img_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0px;
-  border: 0px;
+  border-radius: 50%;
+  border: 0.5em solid var(--secondary-colour);
   padding: 0px;
+}
+
+.doggo__details_container {
+  padding: 1em;
 }
 
 .doggo__display_text {
@@ -19,17 +50,4 @@
 .doggo__body_text {
   font-family: var(--text-body);
   margin: 0 0 1em 0;
-}
-
-.index__doggo_img {
-  position: relative;
-  display: inline-flex;
-  height: 20em;
-  width: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
 }

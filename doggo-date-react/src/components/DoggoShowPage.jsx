@@ -52,8 +52,7 @@ class DoggoShowPage extends Component {
 
     return (
       <main className="doggo-show-page__container">
-        <h2>The Doggo Show</h2>
-        <DoggoDetails {...doggo} />
+        <DoggoDetails {...doggo} style={{ margin: 0 }} />
         <br />
         <button onClick={this.destroyDoggo}>Send this Doggo to the Farm</button>
       </main>
