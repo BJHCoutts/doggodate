@@ -20,6 +20,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border: 0.5em solid var(--secondary-colour);
   /* background-image: "../images/doggos/group/d381811e46fbde96b7a7437ca25afea1.jpg"; */
 }
 
@@ -27,4 +28,8 @@
   display: flex;
   flex-direction: column;
   justify-self: flex-end;
+}
+
+button {
+  /* margin: 1em 0 0 0; */
 }
