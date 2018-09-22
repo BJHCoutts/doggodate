@@ -13,7 +13,9 @@ class DoggoSerializer < ActiveModel::Serializer
     :image,
     :created_at,
     :user,
-    :park
+    :park,
+    :matches,
+    :friends,
   )
 
   def title

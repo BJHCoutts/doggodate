@@ -26,18 +26,12 @@ body {
 
 main {
   width: 100%;
-  padding: 51px 0 0 0;
+  padding: 70px 0 1em 0;
 }
 
 @media only screen and (max-width: 816px /*984px 949px 976px*/) {
   main {
     padding: 70px 0 0 0;
-  }
-}
-
-@media only screen and (max-width: 617px/*709px665px657px*/) {
-  main {
-    padding: 89px 0 0 0;
   }
 }
 
@@ -60,7 +54,6 @@ p {
 }
 
 input {
-  /* width: 50%; */
   min-width: 20em;
   margin: 0.5em 0 1.5em 0;
 }
@@ -122,13 +115,6 @@ small {
   border-radius: 2vw;
   padding: 2em;
 }
-
-/* .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  line-height: 4.5 rem;
-} */
 
 .text {
   filter: revert;

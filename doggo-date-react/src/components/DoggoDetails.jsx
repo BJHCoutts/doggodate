@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../style/doggoDetails.css";
+// import Doggo from "../requests/doggo.js";
 
 const DoggoDetails = props => {
   return (
@@ -40,11 +42,105 @@ const DoggoDetails = props => {
             <div className="doggo__body_text">{props.user.first_name}</div>
           </div>
         </div>
+
+        {/* <div className="doggo__details_container_info_sp">
+          <div className="info__col_one">
+            <div className="doggo__display_text">Breed</div>
+            <div className="doggo__body_text">{props.breed}</div>
+            <div className="doggo__display_text">Sound</div>
+            <div className="doggo__body_text">{props.sound}</div>
+            <div className="doggo__display_text">Age</div>
+            <div className="doggo__body_text">{props.age}</div>
+            <div className="doggo__display_text">Gender</div>
+            <div className="doggo__body_text">{props.gender}</div>
+          </div>
+          <div className="info__col_three">
+            <div className="doggo__display_text">Coat Length</div>
+            <div className="doggo__body_text">{props.coat_length}</div>
+            <div className="doggo__display_text">Size</div>
+            <div className="doggo__body_text">{props.size}</div>
+            <div className="doggo__display_text">Category</div>
+            <div className="doggo__body_text">{props.category}</div>
+            <div className="doggo__display_text">Owner</div>
+            <div className="doggo__body_text">{props.user.first_name}</div>
+          </div>
+          <div className="info__col_four">
+            <div className="doggo__display_text">Breed</div>
+            <div className="doggo__body_text">{props.breed}</div>
+            <div className="doggo__display_text">Sound</div>
+            <div className="doggo__body_text">{props.sound}</div>
+            <div className="doggo__display_text">Age</div>
+            <div className="doggo__body_text">{props.age}</div>
+            <div className="doggo__display_text">Gender</div>
+            <div className="doggo__body_text">{props.gender}</div>
+          </div>
+          <div className="info__col_two">
+            <div className="doggo__display_text">Coat Length</div>
+            <div className="doggo__body_text">{props.coat_length}</div>
+            <div className="doggo__display_text">Size</div>
+            <div className="doggo__body_text">{props.size}</div>
+            <div className="doggo__display_text">Category</div>
+            <div className="doggo__body_text">{props.category}</div>
+            <div className="doggo__display_text">Owner</div>
+            <div className="doggo__body_text">{props.user.first_name}</div>
+          </div>
+        </div> */}
+
         <div className="doggo__display_text">Favourite Park</div>
         <div className="doggo__body_text">{props.park}</div>
+      </div>
+      <div className="baseDiv">
+        <h2>Doggo Partners</h2>
+
+        <div className="user__doggo_container">
+          {props.friends.map(d => (
+            <div key={d.id} className="friend__single">
+              <Link to={`./${d.id}`}>
+                <div
+                  className="friend__image"
+                  style={{
+                    backgroundImage: `url(../${d.image})`
+                  }}
+                />
+              </Link>
+              <Link to={`../../`}>{d.name}</Link>
+            </div>
+          ))}
+
+          {/* {props.matches.map((d, index) => (
+            <div key={index}>{d.name}</div>
+          ))} */}
+        </div>
       </div>
     </main>
   );
 };
 
 export default DoggoDetails;
+
+{
+  /* Match.first.doggo.name
+  Match.first.friend.name */
+}
+
+// <div className="user__doggo_single">
+//   <Link to={`./${match.id}`}>
+//     <div
+//       key={index}
+//       style={{
+//         backgroundImage: `url(${match.image})`
+//       }}
+//       className="user__doggo_image"
+//     />
+//   </Link>
+
+//   <p style={{ margin: "0 0 1em 0" }}>
+//     <Link to={`/${match.id}`}>{match.friend_id}</Link>
+//     <p>{match.friend}</p>
+//     <p>
+//       Match State:
+//       {match.state}
+//     </p>
+//     <p>{match.friended_at.toLocaleString()}</p>
+//   </p>
+// </div>

@@ -62,7 +62,13 @@ h2 {
   display: grid;
   grid-template: 1fr 1fr;
   grid-template-areas: "col_one col_two";
-  /* flex-direction: row; */
+}
+
+.doggo__details_container_info_sp {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 2em;
+  grid-template-areas: "col_one col_two col_three col_four";
 }
 
 .col_one {
@@ -72,7 +78,36 @@ h2 {
 .col_two {
   grid-area: col_two;
 }
+.info__col_one {
+  grid-area: info_col_one;
+}
+
+.info__col_two {
+  grid-area: info_col_two;
+}
+.info__col_three {
+  grid-area: info_col_three;
+}
+
+.info__col_four {
+  grid-area: info_col_four;
+}
 
 .baseDiv {
   background-color: rgba(245, 245, 245, 0.8);
+}
+
+.friend__single {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend__image {
+  height: 10em;
+  width: 10em;
+  background-position: centered;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0.18em solid var(--secondary-colour);
+  margin: 0 0 0.5em 0;
 }

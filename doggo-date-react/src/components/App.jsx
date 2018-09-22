@@ -84,7 +84,7 @@ class App extends Component {
           />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/doggo/index" exact component={DoggoIndexPage} />
+            <Route path="/doggo/index/" exact component={DoggoIndexPage} />
             <Route path="/user/new" exact component={UserNewPage} />
             <AuthRoute
               isAuth={currentUser}

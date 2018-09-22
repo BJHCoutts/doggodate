@@ -7,10 +7,6 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  # Provides user authentication features on the model
-  # it's called in. Requires a column named `password_digest`
-  # and the gem `bcrypt`
-
   validates :first_name, :last_name, presence: { message: 'must be present!' }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   #                   |          |@|

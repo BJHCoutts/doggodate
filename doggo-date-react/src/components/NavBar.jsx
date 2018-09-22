@@ -14,9 +14,9 @@ const NavBar = props => {
     "Bork, Bork, ",
     "Arf, Arf, ",
     "Woof, Woof, ",
-    "Awoooo! ",
+    "Awwwoooooo! ",
     "Yip! Yip! ",
-    "RRRRRRuff! "
+    "RRRRRRRuff! "
   ];
 
   const greeting = () => {
@@ -47,7 +47,8 @@ const NavBar = props => {
         <React.Fragment>
           <span>
             {greeting()}
-            {currentUser.full_name}
+            <br />
+            {currentUser.first_name}
           </span>
           <a onClick={handleClick} href="#not-used">
             Sign Out
@@ -55,7 +56,8 @@ const NavBar = props => {
         </React.Fragment>
       ) : (
         <NavLink className="supports-classname" exact to="/sign_in">
-          Sign In/Create Account
+          Sign In/<br/>
+          Create Account
         </NavLink>
       )}
     </nav>

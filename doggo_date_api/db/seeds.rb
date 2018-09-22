@@ -20,7 +20,7 @@ super_user = User.create(
   User.create(
     first_name: first_name,
     last_name: last_name,
-    address: "Paris Avenue, Earlwood, New South Wales, Australia",
+    # address: "Paris Avenue, Earlwood, New South Wales, Australia",
     email: "#{first_name.downcase}.#{last_name.downcase}@hot.com",
     password: PASSWORD,
   )
@@ -77,6 +77,9 @@ parks = [
 
 
 
+
+
+end
 50.times.each do
   doggo = Doggo.create(
   name: Faker::Dog.name,
@@ -102,6 +105,32 @@ parks = [
       )
     end
   end
+
+  3.times.each do
+    doggo = Doggo.create(
+    name: Faker::Dog.name,
+    breed: Faker::Dog.breed,
+    sound: Faker::Dog.sound,
+    meme_phrase: Faker::Dog.meme_phrase,
+    age: Faker::Dog.age,
+    gender: Faker::Dog.gender,
+    coat_length: Faker::Dog.coat_length,
+    size: Faker::Dog.size,
+    category: "any",
+    image: doggos.sample,
+    user: User.all.first,
+    park: parks.sample,
+    )
+  
+    if doggo.valid?
+      rand(0..10).times do
+        Match.create(
+          doggo_id: doggo.id,
+          friend_id: Doggo.all.sample.id,
+          friended_at: Faker::Date.between(3.months.ago, Date.today),
+        )
+      end
+    end
 
 end
   

@@ -24,4 +24,5 @@
 
 .NavBar span {
   padding: 1rem;
+  white-space: nowrap;
 }
