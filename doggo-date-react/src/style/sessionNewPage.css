@@ -8,20 +8,27 @@
 }
 
 .sign-in__form {
-  margin: 2vw 1vw 2vw 2vw;
+  /* margin: 2vw 1vw 2vw 2vw; */
   min-width: 15em;
 }
 
 .sign-in__image {
   display: flex;
   width: 100%;
+  height: auto;
   border-radius: 2vw;
-  margin: 2vw 2vw 2vw 1vw;
+  margin: 1em 1em 1em 0; /*2vw 2vw 2vw 1vw;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: 0.5em solid var(--secondary-colour);
   /* background-image: "../images/doggos/group/d381811e46fbde96b7a7437ca25afea1.jpg"; */
+}
+
+@media (max-width: 450px) {
+  .sign-in__image {
+    display: none;
+  }
 }
 
 .sign-in__create_account {

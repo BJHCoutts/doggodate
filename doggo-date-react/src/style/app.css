@@ -109,7 +109,6 @@ small {
 }
 
 .baseDiv {
-  filter: none;
   background-color: var(--primary-colour);
   color: var(--secondary-colour);
   border-radius: 2vw;
@@ -118,4 +117,10 @@ small {
 
 .text {
   filter: revert;
+}
+
+.link {
+  text-decoration: none;
+  font: 1em Arvo;
+  color: var(--secondary-colour);
 }

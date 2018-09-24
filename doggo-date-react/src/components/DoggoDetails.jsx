@@ -103,13 +103,11 @@ const DoggoDetails = props => {
                   }}
                 />
               </Link>
-              <Link to={`../../`}>{d.name}</Link>
+              <Link to={`../../`} className="link">
+                {d.name}
+              </Link>
             </div>
           ))}
-
-          {/* {props.matches.map((d, index) => (
-            <div key={index}>{d.name}</div>
-          ))} */}
         </div>
       </div>
     </main>

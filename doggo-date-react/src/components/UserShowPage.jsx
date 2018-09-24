@@ -52,7 +52,9 @@ class UserShowPage extends Component {
                 </Link>
 
                 <p style={{ margin: "0 0 1em 0" }}>
-                  <Link to={`doggo/index/${doggo.id}`}>{doggo.name}</Link>
+                  <Link to={`doggo/index/${doggo.id}`} className="link">
+                    {doggo.name}
+                  </Link>
                 </p>
               </div>
             ))}
