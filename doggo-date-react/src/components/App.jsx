@@ -84,8 +84,18 @@ class App extends Component {
           />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/doggo/index/" exact component={DoggoIndexPage} />
             <Route path="/user/new" exact component={UserNewPage} />
+            <AuthRoute
+              isAuth={currentUser}
+              path="/doggo/index/"
+              exact
+              render={props => (
+                <DoggoIndexPage
+                  currentUser={this.state.currentUser}
+                  {...props}
+                />
+              )}
+            />
             <AuthRoute
               isAuth={currentUser}
               path="/user"
@@ -100,7 +110,11 @@ class App extends Component {
               exact
               render={props => <DoggoNewPage {...props} />}
             />
-            <Route path="/doggo/index/:id" exact component={DoggoShowPage} />
+            <Route path="/doggo/index/:id" component={DoggoShowPage} />
+            {/* <Route
+              path="/doggo/index/:id"
+              render={props => <DoggoShowPage {...props} />}
+            /> */}
             <Route
               path="/map_page"
               render={props => (

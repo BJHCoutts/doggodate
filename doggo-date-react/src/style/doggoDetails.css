@@ -93,10 +93,6 @@ h2 {
   grid-area: info_col_four;
 }
 
-.baseDiv {
-  background-color: rgba(245, 245, 245, 0.8);
-}
-
 .friend__single {
   display: flex;
   flex-direction: column;

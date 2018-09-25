@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "../style/doggoDetails.css";
 // import Doggo from "../requests/doggo.js";
 
@@ -95,7 +95,7 @@ const DoggoDetails = props => {
         <div className="user__doggo_container">
           {props.friends.map(d => (
             <div key={d.id} className="friend__single">
-              <Link to={`./${d.id}`}>
+              <Link to={`./${d.id}`} onClick={() => console.log("hi")}>
                 <div
                   className="friend__image"
                   style={{

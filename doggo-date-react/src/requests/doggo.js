@@ -21,6 +21,14 @@ const Doggo = {
       body: JSON.stringify(params)
     }).then(res => res.json());
   },
+  update(id, params) {
+    return fetch(`${BASE_URL}/doggos/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify(params)
+    }).then(res => res.json());
+  },
   destroy(id) {
     return fetch(`${BASE_URL}/doggos/${id}`, {
       method: "DELETE",

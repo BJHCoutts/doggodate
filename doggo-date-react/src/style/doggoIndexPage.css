@@ -1,3 +1,10 @@
+/* .index__container_page {
+} */
+
+.doggo_index__form {
+  margin: 0 0 1em 35vw;
+}
+
 .index__doggo_container {
   display: flex;
   flex-direction: row;
@@ -57,6 +64,7 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  align-self: flex-end;
 }
 
 .index__svg {

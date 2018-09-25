@@ -13,7 +13,8 @@ class DoggoIndexPage extends Component {
 
     this.state = {
       doggos: [],
-      value: null
+      parkValue: null,
+      doggoValue: null
     };
 
     this.handlePoop = this.handlePoop.bind(this);
@@ -28,9 +29,15 @@ class DoggoIndexPage extends Component {
     });
   }
 
-  handleChange = e => {
+  handleParkChange = e => {
     this.setState({
-      value: e.target.value
+      parkValue: e.target.value
+    });
+  };
+
+  handleDoggoChange = e => {
+    this.setState({
+      doggoValue: e.target.value
     });
   };
 
@@ -46,19 +53,22 @@ class DoggoIndexPage extends Component {
     const { doggos } = this.state;
 
     return (
-      <main className="index__container_page">
+      <main className="index__container_page" style={{ margin: "0 0 0 0" }}>
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
             margin: "1em 0 2em 0"
           }}
-          className="doggo-index__end"
         >
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleParkSubmit} className="doggo_index__form">
             <label>Pick your preferred park:</label>
             <br />
-            <select value={this.state.value} onChange={this.handleChange}>
+            <select
+              value={this.state.parkValue}
+              onChange={this.handleParkChange}
+            >
               <option value="" disabled selected hidden>
                 Please select a park...
               </option>
@@ -79,10 +89,29 @@ class DoggoIndexPage extends Component {
               <option value="Van Dusen">Van Dusen</option>
             </select>
           </form>
+
+          <br />
+
+          <form onSubmit={this.handleDoggoSubmit} className="doggo_index__form">
+            <label>Pick your preferred doggo:</label>
+            <br />
+            <select
+              value={this.state.doggoValue}
+              onChange={this.handleDoggoChange}
+            >
+              <option value="" disabled selected hidden>
+                {this.props.currentUser.first_name}
+                's doggos...
+              </option>
+              {this.props.currentUser.doggos.map((doggo, index) => (
+                <option value={doggo.name}>{doggo.name}</option>
+              ))}
+            </select>
+          </form>
         </div>
 
         <ul style={{ padding: 0, listStyle: "none" }}>
-          {doggos.filter(d => d.park === this.state.value).map(doggo => (
+          {doggos.filter(d => d.park === this.state.parkValue).map(doggo => (
             <li className="index__doggo_container" key={doggo.id}>
               <img
                 src={poop}
