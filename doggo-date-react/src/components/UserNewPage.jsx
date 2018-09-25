@@ -32,7 +32,7 @@ class UserNewPage extends Component {
           validation: data.errors
         });
       } else {
-        const doggoId = data.id;
+        // const doggoId = data.id;
         this.props.history.push(`/doggo/new`);
         // this.props.history.push(`/user`)
       }
@@ -41,7 +41,7 @@ class UserNewPage extends Component {
   }
 
   render() {
-    const { validationErrors } = this.state;
+    // const { validationErrors } = this.state;
     return (
       <main className="user-new-page__container">
         <form

@@ -72,10 +72,10 @@ class App extends Component {
     return (
       <Router>
         <div
-          style={{ padding: 0 }}
           className="parallax"
           style={{
-            backgroundImage: `url(${parkImages[0]})`
+            backgroundImage: `url(${parkImages[0]})`,
+            padding: 0
           }}
         >
           <NavBar

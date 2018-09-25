@@ -13,8 +13,8 @@ class DoggoIndexPage extends Component {
 
     this.state = {
       doggos: [],
-      parkValue: null,
-      doggoValue: null
+      parkValue: "",
+      doggoValue: ""
     };
 
     this.handlePoop = this.handlePoop.bind(this);
@@ -42,11 +42,19 @@ class DoggoIndexPage extends Component {
   };
 
   handlePoop() {
-    console.log("Poop!");
+    this.state.doggoValue === ""
+      ? alert(
+          "Please select your own Doggo at the top of the page, before matching with others!"
+        )
+      : console.log("Poop!");
   }
 
   handleBone() {
-    console.log("Bone!");
+    this.state.doggoValue === ""
+      ? alert(
+          "Please select your own Doggo at the top of the page, before matching with others!"
+        )
+      : console.log("Bone!");
   }
 
   render() {
@@ -117,6 +125,7 @@ class DoggoIndexPage extends Component {
                 src={poop}
                 className="index__svg"
                 onClick={this.handlePoop}
+                alt="poop icon"
               />
               <div className="index__doggo_card">
                 <Link to={`/doggo/index/${doggo.id}`}>
@@ -156,6 +165,7 @@ class DoggoIndexPage extends Component {
                 src={bone}
                 className="index__svg"
                 onClick={this.handleBone}
+                alt="bone icon"
               />
             </li>
           ))}

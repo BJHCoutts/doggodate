@@ -45,7 +45,7 @@ class DoggoNewPage extends Component {
   }
 
   render() {
-    const { validationErrors } = this.state;
+    // const { validationErrors } = this.state;
 
     return (
       <main>

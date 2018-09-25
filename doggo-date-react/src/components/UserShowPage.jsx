@@ -41,11 +41,10 @@ class UserShowPage extends Component {
             Doggos that this user belongs to:
           </h3>
           <div className="user__doggo_container">
-            {this.props.currentUser.doggos.map((doggo, index) => (
-              <div className="user__doggo_single">
+            {this.props.currentUser.doggos.map(doggo => (
+              <div className="user__doggo_single" key={doggo.id}>
                 <Link to={`doggo/index/${doggo.id}`}>
                   <div
-                    key={index}
                     style={{ backgroundImage: `url(${doggo.image})` }}
                     className="user__doggo_image"
                   />

@@ -1,13 +1,10 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import "../style/doggoDetails.css";
-// import Doggo from "../requests/doggo.js";
 
 const DoggoDetails = props => {
   function handleRedirect(id) {
     return <Redirect to={`./${id}`} />;
-
-    console.log("inside doggo details");
   }
   return (
     <main>
@@ -48,49 +45,6 @@ const DoggoDetails = props => {
           </div>
         </div>
 
-        {/* <div className="doggo__details_container_info_sp">
-          <div className="info__col_one">
-            <div className="doggo__display_text">Breed</div>
-            <div className="doggo__body_text">{props.breed}</div>
-            <div className="doggo__display_text">Sound</div>
-            <div className="doggo__body_text">{props.sound}</div>
-            <div className="doggo__display_text">Age</div>
-            <div className="doggo__body_text">{props.age}</div>
-            <div className="doggo__display_text">Gender</div>
-            <div className="doggo__body_text">{props.gender}</div>
-          </div>
-          <div className="info__col_three">
-            <div className="doggo__display_text">Coat Length</div>
-            <div className="doggo__body_text">{props.coat_length}</div>
-            <div className="doggo__display_text">Size</div>
-            <div className="doggo__body_text">{props.size}</div>
-            <div className="doggo__display_text">Category</div>
-            <div className="doggo__body_text">{props.category}</div>
-            <div className="doggo__display_text">Owner</div>
-            <div className="doggo__body_text">{props.user.first_name}</div>
-          </div>
-          <div className="info__col_four">
-            <div className="doggo__display_text">Breed</div>
-            <div className="doggo__body_text">{props.breed}</div>
-            <div className="doggo__display_text">Sound</div>
-            <div className="doggo__body_text">{props.sound}</div>
-            <div className="doggo__display_text">Age</div>
-            <div className="doggo__body_text">{props.age}</div>
-            <div className="doggo__display_text">Gender</div>
-            <div className="doggo__body_text">{props.gender}</div>
-          </div>
-          <div className="info__col_two">
-            <div className="doggo__display_text">Coat Length</div>
-            <div className="doggo__body_text">{props.coat_length}</div>
-            <div className="doggo__display_text">Size</div>
-            <div className="doggo__body_text">{props.size}</div>
-            <div className="doggo__display_text">Category</div>
-            <div className="doggo__body_text">{props.category}</div>
-            <div className="doggo__display_text">Owner</div>
-            <div className="doggo__body_text">{props.user.first_name}</div>
-          </div>
-        </div> */}
-
         <div className="doggo__display_text">Favourite Park</div>
         <div className="doggo__body_text">{props.park}</div>
       </div>
@@ -130,11 +84,6 @@ const DoggoDetails = props => {
 };
 
 export default DoggoDetails;
-
-{
-  /* Match.first.doggo.name
-  Match.first.friend.name */
-}
 
 // <div className="user__doggo_single">
 //   <Link to={`./${match.id}`}>
