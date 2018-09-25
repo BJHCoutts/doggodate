@@ -16,15 +16,22 @@ class DoggoShowPage extends Component {
   }
 
   componentDidMount() {
-    const doggoId = this.props.match.params.id;
+    this.loadPage();
+  }
 
+  componentDidUpdate() {
+    this.loadPage();
+  }
+
+  loadPage = () => {
+    const doggoId = this.props.match.params.id;
     Doggo.one(doggoId).then(doggo => {
       this.setState({
         loading: false,
         doggo: doggo
       });
     });
-  }
+  };
 
   destroyDoggo() {
     const doggoId = this.props.match.params.id;

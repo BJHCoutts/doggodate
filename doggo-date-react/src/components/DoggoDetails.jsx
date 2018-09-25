@@ -4,6 +4,11 @@ import "../style/doggoDetails.css";
 // import Doggo from "../requests/doggo.js";
 
 const DoggoDetails = props => {
+  function handleRedirect(id) {
+    return <Redirect to={`./${id}`} />;
+
+    console.log("inside doggo details");
+  }
   return (
     <main>
       <div className="profile__doggo_img_container">
@@ -95,7 +100,10 @@ const DoggoDetails = props => {
         <div className="user__doggo_container">
           {props.friends.map(d => (
             <div key={d.id} className="friend__single">
-              <Link to={`./${d.id}`} onClick={() => console.log("hi")}>
+              <Link
+                to={`./${d.id}`}
+                onClick={() => this.props.history.push(`./${d.id}`)}
+              >
                 <div
                   className="friend__image"
                   style={{
@@ -103,8 +111,15 @@ const DoggoDetails = props => {
                   }}
                 />
               </Link>
-              <Link to={`../../`} className="link">
+              <Link
+                to={`./${d.id}`}
+                className="link"
+                onClick={() => handleRedirect(d.id)}
+              >
                 {d.name}
+              </Link>
+              <Link to={`./${d.id}`} className="link">
+                No refresh
               </Link>
             </div>
           ))}
