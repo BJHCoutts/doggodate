@@ -128,7 +128,7 @@ class App extends Component {
                 <SessionNewPage {...props} onSignIn={this.getUser} />
               )}
             />
-            <Route component={NotFoundPage} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </div>
       </Router>

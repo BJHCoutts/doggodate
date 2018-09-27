@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Doggo from "../requests/doggo";
 import DoggoDetails from "./DoggoDetails";
 import "../style/doggoShowPage.css";
+import Link from "react-router-dom/Link";
 
 class DoggoShowPage extends Component {
   constructor(props) {
@@ -16,15 +17,16 @@ class DoggoShowPage extends Component {
   }
 
   componentDidMount() {
-    this.loadPage();
-  }
+    console.log("did mout di");
 
-  componentDidUpdate() {
-    this.loadPage();
-  }
+    console.log(`this.props.match.params.id >>> ${this.props.match.params.id}`);
 
-  loadPage = () => {
     const doggoId = this.props.match.params.id;
+
+    this.loadPage(doggoId);
+  }
+
+  loadPage = doggoId => {
     Doggo.one(doggoId).then(doggo => {
       this.setState({
         loading: false,
@@ -37,6 +39,20 @@ class DoggoShowPage extends Component {
     const doggoId = this.props.match.params.id;
     Doggo.destroy(doggoId).then(this.props.history.push(`/`));
   }
+
+  componentWillReceiveProps = nextProps => {
+    const { doggo } = this.state;
+    const nextId = nextProps.match.params.id;
+
+    if (!doggo || !doggo.id) {
+      this.loadPage(nextId);
+      return;
+    }
+
+    if (nextId !== doggo.id) {
+      this.loadPage(nextId);
+    }
+  };
 
   render() {
     const { loading, doggo } = this.state;

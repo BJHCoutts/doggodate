@@ -50,6 +50,8 @@ class Api::V1::DoggosController < Api::ApplicationController
       :park,
       :avatar,
       :image,
+      :friends,
+      :matches,
     )
   end
 

@@ -52,8 +52,8 @@ const DoggoDetails = props => {
         <h2>Doggo Partners</h2>
 
         <div className="user__doggo_container">
-          {props.friends.map(d => (
-            <div key={d.id} className="friend__single">
+          {props.friends.map((d, i) => (
+            <div key={`${d.id}-${i}`} className="friend__single">
               <Link
                 to={`./${d.id}`}
                 onClick={() => this.props.history.push(`./${d.id}`)}
@@ -68,7 +68,7 @@ const DoggoDetails = props => {
               <Link
                 to={`./${d.id}`}
                 className="link"
-                onClick={() => handleRedirect(d.id)}
+                // onClick={() => handleRedirect(d.id)}
               >
                 {d.name}
               </Link>

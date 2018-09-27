@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Doggo from "../requests/doggo";
+import Match from "../requests/match";
 import "../style/doggoIndexPage.css";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,8 @@ class DoggoIndexPage extends Component {
     this.state = {
       doggos: [],
       parkValue: "",
-      doggoValue: ""
+      userDoggoValue: "",
+      doggoIdValue: ""
     };
 
     this.handlePoop = this.handlePoop.bind(this);
@@ -37,24 +39,68 @@ class DoggoIndexPage extends Component {
 
   handleDoggoChange = e => {
     this.setState({
-      doggoValue: e.target.value
+      userDoggoValue: e.target.value
     });
   };
 
-  handlePoop() {
-    this.state.doggoValue === ""
+  handlePoop(id) {
+    this.state.userDoggoValue === ""
       ? alert(
           "Please select your own Doggo at the top of the page, before matching with others!"
         )
-      : console.log("Poop!");
-  }
+      : console.log(
+          "Poop! This doggo id: " +
+            id +
+            " Your doggo id: " +
+            this.state.userDoggoValue
+        );
 
-  handleBone() {
+    // Doggo.update(this.state.userDoggoValue, {
+    //   matches: id
+    // });
+  }
+  //.then(data =>)}
+
+  // Doggo.create({
+  //   name: formData.get("name"),
+  //   breed: formData.get("breed"),
+  //   sound: formData.get("sound"),
+  //   meme_phrase: formData.get("meme_phrase"),
+  //   age: formData.get("age"),
+  //   gender: formData.get("gender"),
+  //   coat_length: formData.get("coat_length"),
+  //   size: formData.get("size"),
+  //   category: formData.get("category"),
+  //   park: formData.get("park")
+  // }).then(data => {
+  //   if (data.status === 422) {
+  //     this.setState({
+  //       validationErrors: data.errors
+  //     });
+  //   } else {
+  //     const doggoId = data.id;
+  //     this.props.history.push(`/doggo/index/${doggoId}`);
+  //   }
+  // });
+
+  handleBone(id) {
     this.state.doggoValue === ""
       ? alert(
           "Please select your own Doggo at the top of the page, before matching with others!"
         )
-      : console.log("Bone!");
+      : console.log(
+          "Bone! This doggo id: " +
+            id +
+            " Your doggo id: " +
+            this.state.userDoggoValue
+        );
+    Match.create(this.state.userDoggoValue, {
+      doggo_id: this.state.userDoggoValue,
+      friend_id: id
+    });
+    // Doggo.update(this.state.userDoggoValue, {
+    //   matches: id
+    // });
   }
 
   render() {
@@ -104,15 +150,17 @@ class DoggoIndexPage extends Component {
             <label>Pick your preferred doggo:</label>
             <br />
             <select
-              value={this.state.doggoValue}
+              value={this.state.userDoggoValue}
               onChange={this.handleDoggoChange}
             >
               <option value="" disabled selected hidden>
                 {this.props.currentUser.first_name}
                 's doggos...
               </option>
-              {this.props.currentUser.doggos.map((doggo, index) => (
-                <option value={doggo.name}>{doggo.name}</option>
+              {this.props.currentUser.doggos.map(doggo => (
+                <option key={doggo.id} value={doggo.id}>
+                  {doggo.name}
+                </option>
               ))}
             </select>
           </form>
@@ -124,7 +172,7 @@ class DoggoIndexPage extends Component {
               <img
                 src={poop}
                 className="index__svg"
-                onClick={this.handlePoop}
+                onClick={this.handlePoop.bind(this, doggo.id)}
                 alt="poop icon"
               />
               <div className="index__doggo_card">
@@ -164,7 +212,7 @@ class DoggoIndexPage extends Component {
               <img
                 src={bone}
                 className="index__svg"
-                onClick={this.handleBone}
+                onClick={this.handleBone.bind(this, doggo.id)}
                 alt="bone icon"
               />
             </li>

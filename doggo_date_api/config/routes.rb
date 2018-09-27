@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :doggos do
         resources :matches, shallow: true, only: [ :create, :destroy ]
       end
+      # end
       resource :session, only: [:create, :destroy]
         # /api/v1/session
       resources :users, only: [] do

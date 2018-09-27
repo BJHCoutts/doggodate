@@ -2,11 +2,13 @@ class Api::V1::MatchesController < Api::ApplicationController
   before_action :authenticate_user!
   
   def create
-    match = Match.new params
+
+    match = Match.new match_params
+    
     # doggo.user = current_user
 
     match.save!
-    render json: { id: doggo.id }
+    render json: true
   end
     
   def index
@@ -30,21 +32,14 @@ class Api::V1::MatchesController < Api::ApplicationController
   #   @doggo ||= Doggo.find params[:id]
   # end
 
-  # def doggo_params
-  #   params.require(:doggo).permit(
-  #     :id, 
-  #     :name, 
-  #     :breed, 
-  #     :sound, 
-  #     :meme_phrase, 
-  #     :age, 
-  #     :gender, 
-  #     :coat_length, 
-  #     :size, 
-  #     :category,
-  #     :park,
-  #     # :image
-  #   )
-  # end
+  def match_params
+    params.require(:match).permit(
+      # :id, 
+      :doggo_id, 
+      :friend_id
+      # :state, 
+      # :friended_at,
+    )
+  end
 
 end
