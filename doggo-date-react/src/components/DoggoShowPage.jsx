@@ -16,16 +16,6 @@ class DoggoShowPage extends Component {
     this.destroyDoggo = this.destroyDoggo.bind(this);
   }
 
-  componentDidMount() {
-    console.log("did mout di");
-
-    console.log(`this.props.match.params.id >>> ${this.props.match.params.id}`);
-
-    const doggoId = this.props.match.params.id;
-
-    this.loadPage(doggoId);
-  }
-
   loadPage = doggoId => {
     Doggo.one(doggoId).then(doggo => {
       this.setState({
@@ -34,6 +24,11 @@ class DoggoShowPage extends Component {
       });
     });
   };
+
+  componentDidMount() {
+    const doggoId = this.props.match.params.id;
+    this.loadPage(doggoId);
+  }
 
   destroyDoggo() {
     const doggoId = this.props.match.params.id;

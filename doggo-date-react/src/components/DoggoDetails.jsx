@@ -56,7 +56,7 @@ const DoggoDetails = props => {
             <div key={`${d.id}-${i}`} className="friend__single">
               <Link
                 to={`./${d.id}`}
-                onClick={() => this.props.history.push(`./${d.id}`)}
+                // onClick={() => this.props.history.push(`./${d.id}`)}
               >
                 <div
                   className="friend__image"
@@ -71,9 +71,6 @@ const DoggoDetails = props => {
                 // onClick={() => handleRedirect(d.id)}
               >
                 {d.name}
-              </Link>
-              <Link to={`./${d.id}`} className="link">
-                No refresh
               </Link>
             </div>
           ))}
