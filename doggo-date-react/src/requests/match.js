@@ -11,7 +11,7 @@ const Match = {
       body: JSON.stringify(params)
     }).then(res => res.json());
   },
-  delete(id) {
+  destroy(id) {
     return fetch(`${BASE_URL}/matches/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },

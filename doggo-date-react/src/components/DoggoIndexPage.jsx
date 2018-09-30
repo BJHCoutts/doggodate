@@ -43,7 +43,9 @@ class DoggoIndexPage extends Component {
     });
   };
 
-  handlePoop(id) {
+  handlePoop(event) {
+    const { id } = event.target;
+
     this.state.userDoggoValue === ""
       ? alert(
           "Please select your own Doggo at the top of the page, before matching with others!"
@@ -52,38 +54,16 @@ class DoggoIndexPage extends Component {
           "Poop! This doggo id: " +
             id +
             " Your doggo id: " +
-            this.state.userDoggoValue
+            this.state.userDoggoValue +
+            " This match ID is: " +
+            undefined
         );
-
-    // Doggo.update(this.state.userDoggoValue, {
-    //   matches: id
-    // });
+    // Match.destroy()
   }
-  //.then(data =>)}
 
-  // Doggo.create({
-  //   name: formData.get("name"),
-  //   breed: formData.get("breed"),
-  //   sound: formData.get("sound"),
-  //   meme_phrase: formData.get("meme_phrase"),
-  //   age: formData.get("age"),
-  //   gender: formData.get("gender"),
-  //   coat_length: formData.get("coat_length"),
-  //   size: formData.get("size"),
-  //   category: formData.get("category"),
-  //   park: formData.get("park")
-  // }).then(data => {
-  //   if (data.status === 422) {
-  //     this.setState({
-  //       validationErrors: data.errors
-  //     });
-  //   } else {
-  //     const doggoId = data.id;
-  //     this.props.history.push(`/doggo/index/${doggoId}`);
-  //   }
-  // });
+  handleBone(event) {
+    const { id } = event.target;
 
-  handleBone(id) {
     this.state.doggoValue === ""
       ? alert(
           "Please select your own Doggo at the top of the page, before matching with others!"
@@ -98,9 +78,6 @@ class DoggoIndexPage extends Component {
       doggo_id: this.state.userDoggoValue,
       friend_id: id
     });
-    // Doggo.update(this.state.userDoggoValue, {
-    //   matches: id
-    // });
   }
 
   render() {
@@ -171,8 +148,10 @@ class DoggoIndexPage extends Component {
             <li className="index__doggo_container" key={doggo.id}>
               <img
                 src={poop}
+                id={doggo.id}
                 className="index__svg"
-                onClick={this.handlePoop.bind(this, doggo.id)}
+                // onClick={this.handlePoop.bind(this, doggo.id)}
+                onClick={this.handlePoop}
                 alt="poop icon"
               />
               <div className="index__doggo_card">
@@ -211,8 +190,10 @@ class DoggoIndexPage extends Component {
               </div>
               <img
                 src={bone}
+                id={doggo.id}
                 className="index__svg"
-                onClick={this.handleBone.bind(this, doggo.id)}
+                // onClick={this.handleBone.bind(this, doggo.id)}
+                onClick={this.handleBone}
                 alt="bone icon"
               />
             </li>

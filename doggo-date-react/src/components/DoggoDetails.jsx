@@ -1,10 +1,15 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import "../style/doggoDetails.css";
+import Doggo from "../requests/doggo";
+import Match from "../requests/match";
 
 const DoggoDetails = props => {
-  function handleRedirect(id) {
-    return <Redirect to={`./${id}`} />;
+  // function handleRedirect(id) {
+  //   return <Redirect to={`./${id}`} />;
+  // }
+  function destroyRelationship(id) {
+    console.log(`destroy ${id}`);
   }
   return (
     <main>
@@ -48,6 +53,7 @@ const DoggoDetails = props => {
         <div className="doggo__display_text">Favourite Park</div>
         <div className="doggo__body_text">{props.park}</div>
       </div>
+
       <div className="baseDiv">
         <h2>Doggo Partners</h2>
 
@@ -72,6 +78,38 @@ const DoggoDetails = props => {
               >
                 {d.name}
               </Link>
+              <p
+                onClick={destroyRelationship(d.id)}
+                style={{ cursor: "pointer" }}
+              >
+                {/* Termination Id */}
+                {/* {props.matches.id} */}
+                {props.matches.filter(m => m.friend_id === d.id).map((m, i) => (
+                  <div>
+                    <p>Termination IDs</p>
+                    <p key={i}>Match {m.id}</p>
+                    <p key={i}>Doggo {m.doggo_id}</p>
+                    <p key={i}>Friend {m.friend_id}</p>
+                    <p />
+                  </div>
+                ))}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="baseDiv">
+        <h2>Doggo Partners</h2>
+
+        <div className="user__doggo_container">
+          {props.matches.map((m, i) => (
+            <div>
+              <p>Termination IDs</p>
+              <p key={i}>Match {m.id}</p>
+              <p key={i}>Doggo {m.doggo_id}</p>
+              <p key={i}>Friend {m.friend_id}</p>
+              <p />
             </div>
           ))}
         </div>
@@ -81,25 +119,3 @@ const DoggoDetails = props => {
 };
 
 export default DoggoDetails;
-
-// <div className="user__doggo_single">
-//   <Link to={`./${match.id}`}>
-//     <div
-//       key={index}
-//       style={{
-//         backgroundImage: `url(${match.image})`
-//       }}
-//       className="user__doggo_image"
-//     />
-//   </Link>
-
-//   <p style={{ margin: "0 0 1em 0" }}>
-//     <Link to={`/${match.id}`}>{match.friend_id}</Link>
-//     <p>{match.friend}</p>
-//     <p>
-//       Match State:
-//       {match.state}
-//     </p>
-//     <p>{match.friended_at.toLocaleString()}</p>
-//   </p>
-// </div>
