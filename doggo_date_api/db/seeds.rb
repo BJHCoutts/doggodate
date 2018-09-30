@@ -2,6 +2,42 @@ PASSWORD = "cat"
 
 User.destroy_all
 Doggo.destroy_all
+Match.destroy_all
+
+doggos = [
+  "../images/doggos/archmage_alfie.jpg",
+"../images/doggos/bumble_bertha.jpg",
+"../images/doggos/drill_bit_darel.jpg",
+"../images/doggos/four_fists_phil.jpg",
+"../images/doggos/inbread_dog.jpg",
+"../images/doggos/knight_nicholas.jpg",
+"../images/doggos/larry_the_lion.jpg",
+"../images/doggos/lumberjack_laurence.jpg",
+"../images/doggos/moneybags_michael.jpg",
+"../images/doggos/nina_the_ninja.jpg",
+"../images/doggos/paws.jpg",
+"../images/doggos/rebel_with_a_cause_callum.jpg",
+"../images/doggos/toxic_tim.jpg",
+"../images/doggos/wicked_witch_wendy.jpg",
+]
+
+parks = [
+"Crab Park",
+"Deer Lake",
+"Dude Chilling",
+"Hinge Park",
+"Jericho",
+"Jonathon Rogers",
+"Kits Beach",
+"Lighthouse Park",
+"Pacific Spirit",
+"Queen Elizabeth",
+"Robson Square",
+"Stanley Park",
+"Sun Yat Sen",
+"Trout Lake",
+"Van Dusen",
+];
 
 super_user = User.create(
   first_name: "Rufus",
@@ -32,41 +68,6 @@ end
 users = User.all
   
 puts Cowsay.say "Created #{users.count} users", :ren
-  
-doggos = [
-      "../images/doggos/archmage_alfie.jpg",
-  "../images/doggos/bumble_bertha.jpg",
-  "../images/doggos/drill_bit_darel.jpg",
-  "../images/doggos/four_fists_phil.jpg",
-  "../images/doggos/inbread_dog.jpg",
-  "../images/doggos/knight_nicholas.jpg",
-  "../images/doggos/larry_the_lion.jpg",
-  "../images/doggos/lumberjack_laurence.jpg",
-  "../images/doggos/moneybags_michael.jpg",
-  "../images/doggos/nina_the_ninja.jpg",
-  "../images/doggos/paws.jpg",
-  "../images/doggos/rebel_with_a_cause_callum.jpg",
-  "../images/doggos/toxic_tim.jpg",
-  "../images/doggos/wicked_witch_wendy.jpg",
-]
-
-parks = [
-  "Crab Park",
-  "Deer Lake",
-  "Dude Chilling",
-  "Hinge Park",
-  "Jericho",
-  "Jonathon Rogers",
-  "Kits Beach",
-  "Lighthouse Park",
-  "Pacific Spirit",
-  "Queen Elizabeth",
-  "Robson Square",
-  "Stanley Park",
-  "Sun Yat Sen",
-  "Trout Lake",
-  "Van Dusen",
-];
 
 # https://dog.ceo/api/breeds/image/random
 
@@ -75,12 +76,7 @@ parks = [
 #     "message": "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg"
 # }
 
-
-
-
-
-end
-50.times.each do
+50.times do
   doggo = Doggo.create(
   name: Faker::Dog.name,
   breed: Faker::Dog.breed,
@@ -105,34 +101,35 @@ end
       )
     end
   end
-
-  3.times.each do
-    doggo = Doggo.create(
-    name: Faker::Dog.name,
-    breed: Faker::Dog.breed,
-    sound: Faker::Dog.sound,
-    meme_phrase: Faker::Dog.meme_phrase,
-    age: Faker::Dog.age,
-    gender: Faker::Dog.gender,
-    coat_length: Faker::Dog.coat_length,
-    size: Faker::Dog.size,
-    category: "any",
-    image: doggos.sample,
-    user: User.all.first,
-    park: parks.sample,
-    )
-  
-    if doggo.valid?
-      rand(0..10).times do
-        Match.create(
-          doggo_id: doggo.id,
-          friend_id: Doggo.all.sample.id,
-          friended_at: Faker::Date.between(3.months.ago, Date.today),
-        )
-      end
-    end
-
 end
+
+#   3.times.each do
+#     doggo = Doggo.create(
+#     name: Faker::Dog.name,
+#     breed: Faker::Dog.breed,
+#     sound: Faker::Dog.sound,
+#     meme_phrase: Faker::Dog.meme_phrase,
+#     age: Faker::Dog.age,
+#     gender: Faker::Dog.gender,
+#     coat_length: Faker::Dog.coat_length,
+#     size: Faker::Dog.size,
+#     category: "any",
+#     image: doggos.sample,
+#     user: User.all.first,
+#     park: parks.sample,
+#     )
+  
+#     if doggo.valid?
+#       rand(0..10).times do
+#         Match.create(
+#           doggo_id: doggo.id,
+#           friend_id: Doggo.all.sample.id,
+#           friended_at: Faker::Date.between(3.months.ago, Date.today),
+#         )
+#       end
+#     end
+    
+# end
   
 doggos = Doggo.all
 

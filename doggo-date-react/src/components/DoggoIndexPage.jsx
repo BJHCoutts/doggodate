@@ -54,9 +54,7 @@ class DoggoIndexPage extends Component {
           "Poop! This doggo id: " +
             id +
             " Your doggo id: " +
-            this.state.userDoggoValue +
-            " This match ID is: " +
-            undefined
+            this.state.userDoggoValue
         );
     // Match.destroy()
   }
