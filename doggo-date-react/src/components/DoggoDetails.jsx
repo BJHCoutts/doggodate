@@ -1,16 +1,15 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import Match from "../requests/match.js";
 import "../style/doggoDetails.css";
-import Doggo from "../requests/doggo";
-import Match from "../requests/match";
 
 const DoggoDetails = props => {
-  // function handleRedirect(id) {
-  //   return <Redirect to={`./${id}`} />;
+  // function destroyRelationship() {
+  //   const { id } = this.event.target;
+  //   Match.destroy(id);
   // }
-  function destroyRelationship(id) {
-    console.log(`destroy ${id}`);
-  }
+  // function destroyRelationship(id)
+
   return (
     <main>
       <div className="profile__doggo_img_container">
@@ -78,38 +77,19 @@ const DoggoDetails = props => {
               >
                 {d.name}
               </Link>
-              <p
-                onClick={destroyRelationship(d.id)}
-                style={{ cursor: "pointer" }}
-              >
-                {/* Termination Id */}
-                {/* {props.matches.id} */}
-                {props.matches.filter(m => m.friend_id === d.id).map((m, i) => (
-                  <div>
-                    <p>Termination IDs</p>
-                    <p key={i}>Match {m.id}</p>
-                    <p key={i}>Doggo {m.doggo_id}</p>
-                    <p key={i}>Friend {m.friend_id}</p>
-                    <p />
-                  </div>
-                ))}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="baseDiv">
-        <h2>Doggo Partners</h2>
-
-        <div className="user__doggo_container">
-          {props.matches.map((m, i) => (
-            <div>
-              <p>Termination IDs</p>
-              <p key={i}>Match {m.id}</p>
-              <p key={i}>Doggo {m.doggo_id}</p>
-              <p key={i}>Friend {m.friend_id}</p>
-              <p />
+              {/* Termination Id */}
+              {/* {props.matches.id} */}
+              {props.matches.filter(m => m.friend_id === d.id).map(m => (
+                <p
+                  key={m.id}
+                  onClick={() => {
+                    Match.destroy(m.id);
+                  }}
+                  style={{ cursor: "pointer" }}
+                >
+                  Doggo Dump
+                </p>
+              ))}
             </div>
           ))}
         </div>

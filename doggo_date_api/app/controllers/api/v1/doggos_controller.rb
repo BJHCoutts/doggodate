@@ -24,10 +24,10 @@ class Api::V1::DoggosController < Api::ApplicationController
   end
 
 
-  # def destroy
-  #   doggo.destroy
-  #   render(json: { status: 200 }, status:200)
-  # end
+  def destroy
+    doggo.destroy
+    render(json: { status: 200 }, status:200)
+  end
 
   private
   

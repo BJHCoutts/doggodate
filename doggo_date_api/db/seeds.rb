@@ -93,7 +93,34 @@ puts Cowsay.say "Created #{users.count} users", :ren
   )
 
   if doggo.valid?
-    rand(0..10).times do
+    rand(1..10).times do
+      Match.create(
+        doggo_id: doggo.id,
+        friend_id: Doggo.all.sample.id,
+        friended_at: Faker::Date.between(3.months.ago, Date.today),
+      )
+    end
+  end
+end
+
+15.times do
+  doggo = Doggo.create(
+  name: Faker::Dog.name,
+  breed: Faker::Dog.breed,
+  sound: Faker::Dog.sound,
+  meme_phrase: Faker::Dog.meme_phrase,
+  age: Faker::Dog.age,
+  gender: Faker::Dog.gender,
+  coat_length: Faker::Dog.coat_length,
+  size: Faker::Dog.size,
+  category: "any",
+  image: doggos.sample,
+  user: User.first,
+  park: parks.sample,
+  )
+
+  if doggo.valid?
+    rand(1..10).times do
       Match.create(
         doggo_id: doggo.id,
         friend_id: Doggo.all.sample.id,

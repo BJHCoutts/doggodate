@@ -22,8 +22,13 @@ class Api::V1::MatchesController < Api::ApplicationController
     #   format.json { render json: @doggos }
   end
 
-  def show    
-    render(json: match)
+  # def show    
+  #   render(json: match)
+  # end
+
+  def destroy 
+    match.destroy
+    render(json: { status: 200}, status:200)
   end
 
   # private

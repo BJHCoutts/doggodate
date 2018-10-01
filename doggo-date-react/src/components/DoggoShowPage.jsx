@@ -32,7 +32,7 @@ class DoggoShowPage extends Component {
 
   destroyDoggo() {
     const doggoId = this.props.match.params.id;
-    Doggo.destroy(doggoId).then(this.props.history.push(`/`));
+    Doggo.destroy(doggoId).then(this.props.history.push(`/user`));
   }
 
   componentWillReceiveProps = nextProps => {
